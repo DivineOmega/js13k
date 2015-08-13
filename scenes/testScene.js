@@ -6,15 +6,22 @@ function TestScene()
     this.textBlue = true;
     
     this.textBlueCounter = 0;
+    this.sceneChangeCounter = 0;
 
     this.updateFunction = function(time)
     {
         this.textBlueCounter += time;
+        this.sceneChangeCounter += time;
         
-        if (this.textBlueCounter>0.3)
+        if (this.textBlueCounter>0.25)
         {
             this.textBlue = !this.textBlue;
             this.textBlueCounter = 0;
+        }
+        
+        if (this.sceneChangeCounter > 2.5)
+        {
+            this.convergame.changeScene(introScene);
         }
     };
     
@@ -37,5 +44,8 @@ function TestScene()
     this.init = function(convergame)
     {
         this.convergame = convergame;
+        
+        this.textBlueCounter = 0;
+        this.sceneChangeCounter = 0;
     };
 }
