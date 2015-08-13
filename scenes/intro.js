@@ -6,15 +6,22 @@ function IntroScene()
     this.textWhite = true;
     
     this.textWhiteCounter = 0;
+    this.sceneChangeCounter = 0;
 
     this.updateFunction = function(time)
     {
         this.textWhiteCounter += time;
+        this.sceneChangeCounter += time;
         
-        if (this.textWhiteCounter>0.5)
+        if (this.textWhiteCounter>=0.5)
         {
             this.textWhite = !this.textWhite;
             this.textWhiteCounter = 0;
+        }
+        
+        if (this.sceneChangeCounter>=5)
+        {
+            this.convergame.changeScene(testScene);
         }
     };
     
@@ -37,5 +44,8 @@ function IntroScene()
     this.init = function(convergame)
     {
         this.convergame = convergame;
+        
+        this.textWhiteCounter = 0;
+        this.sceneChangeCounter = 0;
     };
 }
