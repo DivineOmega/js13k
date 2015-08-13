@@ -19,6 +19,7 @@
 			height: 100%;
 		}
 	</style>
+	<meta charset="UTF-8" /> 
 </head>
 <body id="body">
 	<div id="game-wrapper" class="game-wrapper">
@@ -28,6 +29,20 @@
 			</p>
 		</canvas>
 	</div>
-	<script src="../convergame.js"></script>
+	<script src="convergame/convergame.js"></script>
+	<script src="scenes/intro.js"></script>
+	<script>
+	    
+	    var canvas = document.getElementById("game");
+	    
+	    var introScene = new IntroScene();
+	    
+	    var convergame = new Convergame(canvas, introScene);
+	    
+	    convergame.init();
+	    convergame.changeScene(introScene);
+	    convergame.startMainGameLoop();
+	    
+	</script>
 </body>
 </html>
