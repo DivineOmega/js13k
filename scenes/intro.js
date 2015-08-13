@@ -30,8 +30,8 @@ function IntroScene()
         if (this.textWhite) textColour = '#FFFFFF';
         
         this.convergame.ctx.fillStyle = textColour;
-        this.convergame.ctx.font="20px Georgia";
-        this.convergame.ctx.fillText("Welcome to awesome game!",(width*0.5)-150, (height*0.5));
+        this.convergame.ctx.font="30px Sans Serif";
+        this.convergame.ctx.fillText("Reversed Game for JS13K",(width*0.5)-200, (height*0.5));
     };
     
     this.init = function(convergame)
