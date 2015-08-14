@@ -3,3 +3,6 @@ node_modules
 
 # Build directory
 build
+
+# Minified and concated JS
+js14k.js
