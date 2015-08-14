@@ -5,7 +5,7 @@ node_modules
 build
 
 # Minified and concated JS
-js14k.js
+js13k.js
 
 # Minified HTML
 index.html
