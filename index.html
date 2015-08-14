@@ -33,19 +33,20 @@
 	<script src="scenes/intro.js"></script>
 	<script src="scenes/testScene.js"></script>
 	<script src="scenes/artStyleTest.js"></script>
+	<script src="scenes/controlsTest.js"></script>
 	<script>
 	    
 	    var canvas = document.getElementById("game");
 	    
-	    var introScene = new IntroScene(),
-	    testScene = new TestScene(),
-	    artStyleTest = new ArtStyleTest;
-
+	    var introScene = new IntroScene();
+	    var testScene = new TestScene();
+	    var artStyleTest = new ArtStyleTest();
+        var controlsTest = new ControlsTest();
 	    
 	    var convergame = new Convergame(canvas);
 	    
 	    convergame.init();
-	    convergame.changeScene(artStyleTest);
+	    convergame.changeScene(controlsTest);
 	    convergame.startMainGameLoop();
 	    
 	</script>
