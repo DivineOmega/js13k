@@ -33,7 +33,7 @@ function ControlsTest()
         var textColour = "#FFFFFF";
         
         this.convergame.ctx.fillStyle = textColour;
-        this.convergame.ctx.font="30px Sans Serif";
+        this.convergame.ctx.font = 32 * convergame.getScreenScale() + "px Sans Serif";
         
         this.convergame.ctx.fillText("Dynamic multi-press control system!",100, 100);
         

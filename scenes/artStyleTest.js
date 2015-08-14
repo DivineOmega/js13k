@@ -20,7 +20,7 @@ function ArtStyleTest()
         var textColour = '#000000';
         
         this.convergame.ctx.fillStyle = textColour;
-        this.convergame.ctx.font="bold 32px Helvetica";
+        this.convergame.ctx.font="bold "+ 32 * this.convergame.getScreenScale()+"px Helvetica";
         this.convergame.ctx.fillText("Don't Read The Manual",64, 48);
 
         this.convergame.ctx.font="16px Helvetica";
