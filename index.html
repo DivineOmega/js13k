@@ -25,30 +25,10 @@
 	<div id="game-wrapper" class="game-wrapper">
 		<canvas id="game">
 			<p>
-				Error: Your internet browser doesn't support the game. Please download a modern browser such as <a href="http://firefox.com">Mozilla FireFox</a> or <a href="http://google.com/chrome">Google Chrome</a>.
+				Error: Unsupported browser!
 			</p>
 		</canvas>
 	</div>
-	<script src="convergame/convergame.js"></script>
-	<script src="scenes/intro.js"></script>
-	<script src="scenes/testScene.js"></script>
-	<script src="scenes/artStyleTest.js"></script>
-	<script src="scenes/controlsTest.js"></script>
-	<script>
-	    
-	    var canvas = document.getElementById("game");
-	    
-	    var introScene = new IntroScene();
-	    var testScene = new TestScene();
-	    var artStyleTest = new ArtStyleTest();
-        var controlsTest = new ControlsTest();
-	    
-	    var convergame = new Convergame(canvas);
-	    
-	    convergame.init();
-	    convergame.changeScene(controlsTest);
-	    convergame.startMainGameLoop();
-	    
-	</script>
+	<script src="js13k.js"></script>
 </body>
 </html>
