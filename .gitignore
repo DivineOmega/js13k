@@ -6,3 +6,6 @@ build
 
 # Minified and concated JS
 js14k.js
+
+# Minified HTML
+index.html
