@@ -16,20 +16,19 @@ gulp.task('zip', function () {
 
 gulp.task('build', function() {
 	return gulp.src(js_files)
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
 		.pipe(gp_concat('js13k.js'))
 		.pipe(gulp.dest('./'))
 		.pipe(gp_uglify())
 		.pipe(gulp.dest('./'));
 });
-
+/*
 gulp.task('watch', function() {
 	gulp.watch(js_files).on('change', function(file) {
 	    return gulp.src(file.path)
 		        .pipe(jshint())
 		        .pipe(jshint.reporter('default'))
-		        .pipe(gp_concat('game.js'))
-				.pipe(gulp.dest('./'))
-				.pipe(gp_uglify())
-				.pipe(gulp.dest('./'));
+		        .pipe(gulp.start('build'));
 	});
-});
+});*/
