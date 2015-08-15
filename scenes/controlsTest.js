@@ -19,7 +19,9 @@ function ControlsTest()
         this.textToDisplay += ", ";
         
         this.textToDisplay += "Right: " + this.convergame.isControlPressed("right");
+        this.textToDisplay += ", ";
         
+        this.textToDisplay += "Other: " + this.convergame.isControlPressed(null);
     };
     
     this.renderFunction = function()
