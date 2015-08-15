@@ -1,0 +1,11 @@
+# Node modules
+node_modules
+
+# Build directory
+build
+
+# Minified and concated JS
+js13k.js
+
+# Minified HTML
+index.html
