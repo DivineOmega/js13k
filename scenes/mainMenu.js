@@ -11,26 +11,20 @@ function MainMenu()
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth();
-        var height = this.convergame.getCanvasHeight();
+        this.convergame.blankCanvas('#000000');
         
-        this.convergame.ctx.fillStyle = "#000000";
-        this.convergame.ctx.fillRect(0, 0, width, height);
-        
-        this.convergame.ctx.fillStyle = "#FFFFFF";
-        this.convergame.ctx.font = 64 * this.convergame.getScreenScale() + "px Sans Serif";
+        var textFont = "Open Sans";
+        var textStyle = "#FFFFFF";
 
-        this.convergame.ctx.fillText("Reversed Game for JS13K", 50, 175*this.convergame.getScreenScale());
-        
-        this.convergame.ctx.font = 42 * this.convergame.getScreenScale() + "px Sans Serif";
+        this.convergame.drawText(50, 75, textStyle, 64, textFont, "Reversed Game for JS13K");
 
-        this.convergame.ctx.fillText("Start", 75, height-400*this.convergame.getScreenScale());
-        this.convergame.ctx.fillText("Options", 75, height-300*this.convergame.getScreenScale());
+        this.convergame.drawText(75, 700, textStyle, 42, textFont, "Start");
+        this.convergame.drawText(75, 800, textStyle, 42, textFont, "Options");
 
-        this.convergame.ctx.strokeStyle = "#FFFFFF";
+        var rectangleStyle = "#FFFFFF";
         
-        this.convergame.ctx.strokeRect(50, 30+height-500*this.convergame.getScreenScale(), 500*this.convergame.getScreenScale(), 90*this.convergame.getScreenScale());
-        this.convergame.ctx.strokeRect(50, 30+height-400*this.convergame.getScreenScale(), 500*this.convergame.getScreenScale(), 90*this.convergame.getScreenScale());
+        this.convergame.drawRect(50, 650, 500, 90, rectangleStyle);
+        this.convergame.drawRect(50, 750, 500, 90, rectangleStyle);
         
     };
     
@@ -38,7 +32,5 @@ function MainMenu()
     {
         this.convergame = convergame;
         
-        this.textWhiteCounter = 0;
-        this.sceneChangeCounter = 0;
     };
 }
