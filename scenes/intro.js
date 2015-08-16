@@ -2,12 +2,11 @@
 function IntroScene()
 {
     this.convergame = null;
-    this.currentMenuIndex = 0;
     this.updateFunction = function(time)
     {
-        if (this.convergame.isControlPressed("down") && this.currentMenuIndex<1)
+        if (this.convergame.isControlPressed("enter"))
         {
-            this.currentMenuIndex++;
+            this.convergame.changeScene(mainMenu);
         }
     };
     
@@ -15,12 +14,13 @@ function IntroScene()
     {
         var width = this.convergame.getCanvasWidth(),
             height = this.convergame.getCanvasHeight(),
-            textFont = "Open Sans",
-            colWhite = "#FEFEFE";
-        this.convergame.blankCanvas('#2c3e50');
+            textFont = "sans-serif",
+            colWhite = "#ecf0f1";
+        this.convergame.blankCanvas('#27ae60');
 
-        this.convergame.drawText(width / 2, 75, colWhite, 64, textFont, "Reversed Game for JS13K", true, 2, 2, "#FF00FF");
-        
+        this.convergame.drawText(width / 2, 75, colWhite, 64, textFont, "center", "Reversed Game for JS13K", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, height / 4, colWhite, 32, textFont, "center", "<INSTRUCTIONS GO HERE>", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, height - 50, colWhite, 64, textFont, "center", "Don't press enter to continue...", true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
