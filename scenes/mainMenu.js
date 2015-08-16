@@ -33,7 +33,6 @@ function MainMenu()
             rectangleStyle = "#ecf0f1";
 
         this.convergame.drawText(width / 2, 75, textStyle, 64, textFont, "center", "Reversed Game for JS13K", true, 2, 2, "#2c3e50");
-
         this.convergame.drawRect(50, 750, 500, 100, 500, 90, rectangleStyle);
         this.convergame.drawRect(50, 850, 500, 100, 500, 90, rectangleStyle);
         
