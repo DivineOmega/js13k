@@ -51,7 +51,7 @@ function MainMenu()
         }
         
         this.convergame.drawText(100, 810, textStyle, 42, textFont, "left" ,"Start");
-        this.convergame.drawText(120, 910, textStyle, 42, textFont, "left" ,"Options");
+        this.convergame.drawText(100, 910, textStyle, 42, textFont, "left" ,"Options");
     };
     
     this.init = function(convergame)
