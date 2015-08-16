@@ -6,5 +6,5 @@ controlsTest = new ControlsTest(),
 mainMenu = new MainMenu(),
 convergame = new Convergame(canvas);
 convergame.init();
-convergame.changeScene(mainMenu);
+convergame.changeScene(introScene);
 convergame.startMainGameLoop();

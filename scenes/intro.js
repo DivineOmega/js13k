@@ -2,50 +2,29 @@
 function IntroScene()
 {
     this.convergame = null;
-
-    this.textWhite = true;
-    
-    this.textWhiteCounter = 0;
-    this.sceneChangeCounter = 0;
-
+    this.currentMenuIndex = 0;
     this.updateFunction = function(time)
     {
-        this.textWhiteCounter += time;
-        this.sceneChangeCounter += time;
-        
-        if (this.textWhiteCounter>=0.5)
+        if (this.convergame.isControlPressed("down") && this.currentMenuIndex<1)
         {
-            this.textWhite = !this.textWhite;
-            this.textWhiteCounter = 0;
-        }
-        
-        if (this.sceneChangeCounter>=5)
-        {
-            this.convergame.changeScene(testScene);
+            this.currentMenuIndex++;
         }
     };
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth();
-        var height = this.convergame.getCanvasHeight();
+        var width = this.convergame.getCanvasWidth(),
+            height = this.convergame.getCanvasHeight(),
+            textFont = "Open Sans",
+            colWhite = "#FEFEFE";
+        this.convergame.blankCanvas('#2c3e50');
+
+        this.convergame.drawText(width / 2, 75, colWhite, 64, textFont, "Reversed Game for JS13K", true, 2, 2, "#FF00FF");
         
-        this.convergame.ctx.fillStyle = "#000000";
-        this.convergame.ctx.fillRect(0, 0, width, height);
-        
-        var textColour = '#FF0000';
-        if (this.textWhite) textColour = '#FFFFFF';
-        
-        this.convergame.ctx.fillStyle = textColour;
-        this.convergame.ctx.font="30px Sans Serif";
-        this.convergame.ctx.fillText("Reversed Game for JS13K",(width*0.5)-200, (height*0.5));
     };
     
     this.init = function(convergame)
     {
         this.convergame = convergame;
-        
-        this.textWhiteCounter = 0;
-        this.sceneChangeCounter = 0;
     };
 }

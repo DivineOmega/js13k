@@ -25,7 +25,7 @@ function MainMenu()
         var textFont = "Open Sans";
         var textStyle = "#FFFFFF";
 
-        this.convergame.drawText(50, 75, textStyle, 64, textFont, "Reversed Game for JS13K");
+        this.convergame.drawText(50, 75, textStyle, 64, textFont, "Reversed Game for JS13K", true, 2, 2, "#FF00FF");
 
         var rectangleStyle = "#FFFFFF";
         
