@@ -1,8 +1,6 @@
-
 function MainMenu()
 {
     this.convergame = null;
-
     this.currentMenuIndex = 0;
 
     this.updateFunction = function(time)
@@ -16,6 +14,14 @@ function MainMenu()
         {
             this.currentMenuIndex--;
         }
+
+        if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 0)
+        {
+            // Go to Start Game scene
+        } else if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 1) {
+            this.convergame.changeScene(optionsScene);
+        }
+
     };
     this.renderFunction = function()
     {
@@ -46,7 +52,6 @@ function MainMenu()
         
         this.convergame.drawText(100, height - 210, textStyle, 42, textFont, "left" ,"Start");
         this.convergame.drawText(120, height - 110, textStyle, 42, textFont, "left" ,"Options");
-        
     };
     
     this.init = function(convergame)
