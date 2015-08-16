@@ -44,8 +44,8 @@ function MainMenu()
                 break;
         }
         
-        this.convergame.drawText(100, height - 205, textStyle, 42, textFont, "left" ,"Start");
-        this.convergame.drawText(120, height - 105, textStyle, 42, textFont, "left" ,"Options");
+        this.convergame.drawText(100, height - 210, textStyle, 42, textFont, "left" ,"Start");
+        this.convergame.drawText(120, height - 110, textStyle, 42, textFont, "left" ,"Options");
         
     };
     
