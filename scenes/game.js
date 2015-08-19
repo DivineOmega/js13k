@@ -3,6 +3,10 @@ var canvas = document.getElementById("game"),
 	mainMenu = new MainMenu(),
 	optionsScene = new OptionsScene(),
 	minigameSwitcher = new MinigameSwitcher(),
+	success = new Success(),
+	fail = new Fail(),
+	timeout = new Timeout(),
+	minigameUpOrDown = new MinigameUpOrDown(),
 	convergame = new Convergame(canvas);
 
 convergame.init();
