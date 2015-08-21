@@ -45,6 +45,15 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest('./'));
 });
 
+gulp.task('build-js', function() {
+	return gulp.src(js_files)
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe(gp_uglify())
+		.pipe(gp_concat('js13k.js'))
+		.pipe(gulp.dest('./'));
+});
+
 gulp.task('build-dev', function() {
 	return gulp.src(js_files)
 		.pipe(jshint())
