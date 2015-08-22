@@ -17,7 +17,7 @@ function MinigameSwitcher()
         {
             this.startMinigameTimer = 0;
             
-            var miniGames = [ minigameUpOrDown ];
+            var miniGames = [ minigameUpOrDown, minigameButton ];
             
             random = this.convergame.random(0,miniGames.length-1);
             
