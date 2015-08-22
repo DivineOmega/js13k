@@ -9,6 +9,7 @@ var canvas = document.getElementById("game"),
 	minigameUpOrDown = new MinigameUpOrDown(),
 	minigameLeftOrRight = new MinigameLeftOrRight(),
 	minigameButton = new MinigameButton(),
+	minigameDoNothing = new MinigameDoNothing(),
 	convergame = new Convergame(canvas);
 	
 convergame.init();

@@ -91,7 +91,7 @@ function MinigameSwitcher()
                 break;
         }
         
-        var availableMinigames = [ minigameUpOrDown, minigameButton, minigameLeftOrRight ];
+        var availableMinigames = [ minigameUpOrDown, minigameButton, minigameLeftOrRight, minigameDoNothing ];
         
         if (this.gameBag.length===0) this.gameBag = availableMinigames;
         
