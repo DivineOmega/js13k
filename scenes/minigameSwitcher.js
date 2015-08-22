@@ -89,7 +89,7 @@ function MinigameSwitcher()
                 break;
         }
         
-        var availableMinigames = [ minigameUpOrDown ];
+        var availableMinigames = [ minigameUpOrDown, minigameButton ];
         
         random = this.convergame.random(0, availableMinigames.length-1);
             

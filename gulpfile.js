@@ -13,12 +13,21 @@ var zip_files = ['js13k.js', 'index.html'], //Files to be added to the zip folde
 	js_files = ['convergame/convergame.js', 'scenes/*'], //All your JS files to be combined and minified
 	img_files = ['assets/*.png','assets/*.jpg','src/**/*.gif','assets/*.jpeg'];
 
+
+//Zip up the JS/HTML required for the game
 gulp.task('zip', function () {
     return gulp.src(zip_files, {base: "."})
         .pipe(zip('js13k.zip'))
         .pipe(gulp.dest('build'));
 });
 
+
+//Run this task once the game is ready to ship!
+gulp.task('publish', function() {
+	runSequence('build-js', 'build-html', 'zip');
+});
+
+//Compress Images
 //Todo: Test to see if it'll override images
 gulp.task('images', function(cb) {
     gulp.src(img_files).pipe(imageop({
@@ -28,16 +37,7 @@ gulp.task('images', function(cb) {
     })).pipe(gulp.dest('assets')).on('end', cb).on('error', cb);
 });
 
-gulp.task('build-js', function() {
-	return gulp.src(js_files)
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
-		.pipe(gp_concat('js13k.js'))
-		.pipe(gulp.dest('./'))
-		.pipe(gp_uglify())
-		.pipe(gulp.dest('./'));
-});
-
+//Minify the HTML
 gulp.task('build-html', function() { 
   return gulp.src('./index.unmin.html')
     .pipe(minifyHTML())
@@ -45,6 +45,7 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest('./'));
 });
 
+//Build the JS and minify
 gulp.task('build-js', function() {
 	return gulp.src(js_files)
 		.pipe(jshint())
@@ -54,6 +55,7 @@ gulp.task('build-js', function() {
 		.pipe(gulp.dest('./'));
 });
 
+//Build the JS without minifying
 gulp.task('build-dev', function() {
 	return gulp.src(js_files)
 		.pipe(jshint())
@@ -65,12 +67,13 @@ gulp.task('build-dev', function() {
 //Legacy 'build' alias for build-dev task
 gulp.task('build', ['build-dev']);
 gulp.task('watch', function () {
-
 	watch(js_files, function () {
-		runSequence('build-dev', 'zip');
+		runSequence('build-dev');
 	});
 
 	watch('./index.unmin.html', function () {
-		runSequence('build-html', 'zip');
+		runSequence('build-html');
 	});
+
+	//Todo: Watch for image changes
 });
