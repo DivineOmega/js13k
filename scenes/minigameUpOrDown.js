@@ -3,6 +3,8 @@ function MinigameUpOrDown()
 {
     this.convergame = null;
     
+    this.controls = 'Up & down arrow keys';
+    
     this.instruction = null;
     this.correctControl = null;
     
