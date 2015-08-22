@@ -9,11 +9,9 @@ function Fail()
     
     this.updateFunction = function(time)
     {
-        this.timer += time;
-        
-        if (this.timer>=3)
+        if (this.convergame.isControlPressed("enter"))
         {
-            this.convergame.changeScene(minigameSwitcher);
+            this.convergame.changeScene(mainMenu);
         }
     };
     
@@ -24,9 +22,9 @@ function Fail()
             textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#CC3300');
-
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 150, colWhite, 128, textFont, "center", "Final score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, height / 2, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, height / 2 + 150, colWhite, 64, textFont, "center", "Press Enter to return to the Main Menu...", true, 2, 2, "#2c3e50")
     };
     
     this.init = function(convergame)
