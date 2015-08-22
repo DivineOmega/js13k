@@ -1,30 +1,35 @@
 function MinigameButton()
 {
     this.convergame = null;
-    
+    this.controls = 'Use the spacebar to press the button!';
     this.instruction = null;
-    this.correctControl = null;
+    this.correctControl = "space";
     this.col = null;
     thiscolShadow = null;
     this.timer = 0;
     this.gameTime = 3;
-    
+    this.canPress = false;
+    this.canPressTimer = null;
     this.updateFunction = function(time)
     {
         this.timer += time;
-        
+        if(this.timer > this.canPressTimer) {
+            this.canPress = true;
+            this.instruction = "Don't Press!";
+            
+        }
+         
         if (this.timer>=3)
         {
             this.convergame.changeScene(timeout);
         }
 
-        if (this.convergame.isControlPressed(this.correctControl))
+        if ( this.canPress === true && this.convergame.isControlPressed(this.correctControl))
         {
             minigameSwitcher.score++;
             this.convergame.changeScene(success);
-        }
-        else if (this.convergame.isControlPressed("up") || this.convergame.isControlPressed("down") || 
-            this.convergame.isControlPressed("left") || this.convergame.isControlPressed("right"))
+        } 
+        else if (this.canPress === false && this.convergame.isControlPressed(this.correctControl))
         {
             this.convergame.changeScene(fail);
         }
@@ -50,23 +55,8 @@ function MinigameButton()
     {
         this.convergame = convergame;
         this.timer = 0;
-        
-        var random = this.convergame.random(1,2);
+        this.canPressTimer = this.convergame.random(1.75,1.9);
         var colRand = this.convergame.random(1, 2);
-
-        switch (random)
-        {
-            case 1:
-                this.instruction = "Press";
-                this.correctControl = "down";
-                break;
-                
-            case 2:
-                this.instruction = "Don't Press";
-                this.correctControl = "up";
-                break;
-        }
-
         switch (colRand)
         {
             case 1:
@@ -78,5 +68,7 @@ function MinigameButton()
                 this.colShadow = "#c0392b";
                 break;
         }
+        this.instruction = "Press Me!";
+        
     };
 }

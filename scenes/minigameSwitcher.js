@@ -6,6 +6,7 @@ function MinigameSwitcher()
     this.score = 0;
     
     this.getReadyMessage = null;
+    this.nextMinigame = null;
     
     this.startMinigameTimer = 0;
     
@@ -13,17 +14,11 @@ function MinigameSwitcher()
     {
         this.startMinigameTimer += time;
         
-        if (this.startMinigameTimer>=3)
+        if (this.startMinigameTimer>=4)
         {
             this.startMinigameTimer = 0;
             
-            var miniGames = [ minigameUpOrDown, minigameButton ];
-            
-            random = this.convergame.random(0,miniGames.length-1);
-            
-            var nextMinigame = miniGames[random];
-            
-            this.convergame.changeScene(nextMinigame);
+            this.convergame.changeScene(this.nextMinigame);
         }
     };
     
@@ -36,6 +31,7 @@ function MinigameSwitcher()
         this.convergame.blankCanvas('#FFBF00');
 
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", "Score: "+this.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 500, colWhite, 32, textFont, "center", this.nextMinigame.controls, true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.getReadyMessage, true, 2, 2, "#2c3e50");
     };
     
@@ -92,6 +88,12 @@ function MinigameSwitcher()
                 this.getReadyMessage = "Incoming reversed minigame...";
                 break;
         }
+        
+        var availableMinigames = [ minigameUpOrDown, minigameButton ];
+        
+        random = this.convergame.random(0, availableMinigames.length-1);
+            
+        this.nextMinigame = availableMinigames[random];
     };
     
     this.resetScore = function()
