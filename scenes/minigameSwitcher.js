@@ -10,6 +10,8 @@ function MinigameSwitcher()
     
     this.startMinigameTimer = 0;
     
+    this.gameBag = [];
+    
     this.updateFunction = function(time)
     {
         this.startMinigameTimer += time;
@@ -91,9 +93,13 @@ function MinigameSwitcher()
         
         var availableMinigames = [ minigameUpOrDown, minigameButton, minigameLeftOrRight ];
         
-        random = this.convergame.random(0, availableMinigames.length-1);
+        if (this.gameBag.length===0) this.gameBag = availableMinigames;
+        
+        random = this.convergame.random(0, this.gameBag.length-1);
             
-        this.nextMinigame = availableMinigames[random];
+        this.nextMinigame = this.gameBag[random];
+        
+        this.gameBag.splice(random, 1);
     };
     
     this.resetScore = function()
