@@ -40,8 +40,11 @@ function MinigameUpOrDown()
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#669999');
 
+        this.convergame.drawFilledRect(50, 275, width-100, 200, '#FFFFFF', '#333333');
+
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        
     };
     
     this.init = function(convergame)
