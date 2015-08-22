@@ -38,7 +38,7 @@ function MinigameDoNothing()
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#669999');
 
-        this.convergame.drawFilledRect(width*0.05, 275, width-(width*0.10), 200, '#FFFFFF', '#333333');
+        this.convergame.drawFilledRect(100, 275, 1600, 200, '#FFFFFF', '#333333');
 
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
