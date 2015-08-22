@@ -7,6 +7,7 @@ var canvas = document.getElementById("game"),
 	fail = new Fail(),
 	timeout = new Timeout(),
 	minigameUpOrDown = new MinigameUpOrDown(),
+	minigameLeftOrRight = new MinigameLeftOrRight(),
 	minigameButton = new MinigameButton(),
 	convergame = new Convergame(canvas);
 	
