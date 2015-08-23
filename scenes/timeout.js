@@ -33,7 +33,9 @@ function Timeout()
     {
         this.convergame = convergame;
         this.timer = 0;
-        
+        if(minigameSwitcher.score > 0) {
+            minigameSwitcher.score--;
+        }
         var random = this.convergame.random(1,16);
         
         switch (random)
