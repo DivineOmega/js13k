@@ -17,10 +17,9 @@ function MinigameTrafficLights()
     this.updateFunction = function(time)
     {
         this.timer += time;
-        if(this.timer > this.canPressTimer) {
+        /*if(this.timer > this.canPressTimer) {
             this.canPress = true;
-            this.instruction = "Don't Press!";
-        }
+        }*/
          
         if (this.timer>=3)
         {
@@ -36,11 +35,20 @@ function MinigameTrafficLights()
         {
             this.convergame.changeScene(fail);
         }
-        //Colour test, please ignore
-        /*var lightRand = this.convergame.random(0, this.lights.length - 1);
-        if(this.timer >= 0.5) {
-            this.lights[lightRand].updateCol(this.col);
-        }*/
+        
+        if(this.timer >= 0 && this.timer <= 1.25) {
+            this.lights[0].updateCol('#e74c3c');
+            this.lights[1].updateCol('#2c3e50');
+            this.lights[2].updateCol('#2c3e50');
+        } else if(this.timer >= 1 && this.timer <= 2) {
+            this.lights[0].updateCol('#2c3e50');
+            this.lights[1].updateCol('#f39c12');
+            this.lights[2].updateCol('#2c3e50');
+        } else if(this.timer >= 2) {
+            this.lights[0].updateCol('#2c3e50');
+            this.lights[1].updateCol('#2c3e50');
+            this.lights[2].updateCol('#2ecc71');
+        }
 
     };
     
@@ -56,6 +64,10 @@ function MinigameTrafficLights()
         for(l = 0; l < this.lights.length; l++) {
             this.lights[l].draw();
         }
+
+        //Text
+        this.convergame.drawText(this.width / 2, 150, this.colWhite, 32, this.textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
+        this.convergame.drawText(this.width / 2, 400, this.colWhite, 64, this.textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
@@ -68,7 +80,7 @@ function MinigameTrafficLights()
         this.colWhite = "#ecf0f1";
         this.canPressTimer = this.convergame.random(1.75,1.9);
         this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 3, this.width / 4, this.height / 2 + this.height / 4, '#34495e');
-        console.log(this.trafficLight);
+        
         var colRand = this.convergame.random(1, 3);
         for(var l = 0; l < 3; l++) {
             light = new TrafficLight((this.trafficLight.x + this.trafficLight.width / 3), this.trafficLight.y + this.trafficLight.height / 4 + (l * 150), 64, '#2c3e50');
@@ -89,6 +101,6 @@ function MinigameTrafficLights()
                 this.col = "#e74c3c"; // Red
                 this.correctCol = "red";
         }
-        this.controls = 'Never go on a ' + this.correctCol + ' light';
+        this.instruction = 'Never go on a ' + this.correctCol + ' light';
     };
 }
