@@ -14,5 +14,5 @@ var canvas = document.getElementById("game"),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
-convergame.changeScene(introScene);
+convergame.changeScene(minigameTrafficLights);
 convergame.startMainGameLoop();

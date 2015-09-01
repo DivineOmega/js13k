@@ -11,6 +11,9 @@ function MinigameTrafficLights()
     this.gameTime = 3;
     this.canPress = false;
     this.canPressTimer = null;
+    this.lights = [];
+    this.trafficLight = null;
+    
     this.updateFunction = function(time)
     {
         this.timer += time;
@@ -19,10 +22,10 @@ function MinigameTrafficLights()
             this.instruction = "Don't Press!";
         }
          
-       /* if (this.timer>=3)
+        if (this.timer>=3)
         {
             this.convergame.changeScene(timeout);
-        } */
+        }
 
         if ( this.canPress === true && this.convergame.isControlPressed(this.correctControl))
         {
@@ -33,42 +36,45 @@ function MinigameTrafficLights()
         {
             this.convergame.changeScene(fail);
         }
+        //Colour test, please ignore
+        /*var lightRand = this.convergame.random(0, this.lights.length - 1);
+        if(this.timer >= 0.5) {
+            this.lights[lightRand].updateCol(this.col);
+        }*/
+
     };
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
-            textFont = "sans-serif",
-            colWhite = "#ecf0f1";
+        
         this.convergame.blankCanvas('#669999');
-        /*this.convergame.drawFilledCircle(width / 2, height / 2 + 110, 256, '#2c3e50', '#2c3e50');
-        this.convergame.drawFilledCircle(width / 2, height / 2 + 100, 256, this.colShadow, this.colShadow);
-        this.convergame.drawFilledCircle(width / 2, height / 2 + 100, 254, this.colShadow, this.col);
-        */
-
-        //Traffic Light
-        //Traffic Light Rectangle Background
-        this.convergame.drawFilledRect((width / 2 + 200) * this.convergame.getScreenScale(), 200 * this.convergame.getScreenScale(), 400 * this.convergame.getScreenScale(), height - 100 * this.convergame.getScreenScale(), '#2c3e50', '#34495e');
+        
         //Traffic Light Rectangle Forground
+        this.trafficLight.draw();
 
         //Traffic Light Circle Black
-        this.convergame.drawFilledCircle((width / 2 + 375) * this.convergame.getScreenScale(), height / 2 - 128 * this.convergame.getScreenScale(), 96 * this.convergame.getScreenScale(), '#2c3e50', '#2c3e50');
-        this.convergame.drawFilledCircle((width / 2 + 375) * this.convergame.getScreenScale(), height / 2 + 64 * this.convergame.getScreenScale(), 96 * this.convergame.getScreenScale(), '#2c3e50', '#2c3e50');
-        this.convergame.drawFilledCircle((width / 2 + 375) * this.convergame.getScreenScale(), height / 2 + 256 * this.convergame.getScreenScale(), 96 * this.convergame.getScreenScale(), '#2c3e50', '#2c3e50');
-        //Traffic Light Circle Colour
-        this.convergame.drawFilledCircle(width / 2, height / 2 + 100, 254, this.col, this.col);
-
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, height / 2 + 110, colWhite, 64, textFont, "center", this.controls, true, 0, -2, "#2c3e50");
+        for(l = 0; l < this.lights.length; l++) {
+            this.lights[l].draw();
+        }
     };
     
     this.init = function(convergame)
     {
         this.convergame = convergame;
         this.timer = 0;
+        this.width = this.convergame.getCanvasWidth();
+        this.height = this.convergame.getCanvasHeight();
+        this.textFont = "sans-serif";
+        this.colWhite = "#ecf0f1";
         this.canPressTimer = this.convergame.random(1.75,1.9);
+        this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 3, this.width / 4, this.height / 2 + this.height / 4, '#34495e');
+        console.log(this.trafficLight);
         var colRand = this.convergame.random(1, 3);
+        for(var l = 0; l < 3; l++) {
+            light = new TrafficLight((this.trafficLight.x + this.trafficLight.width / 3), this.trafficLight.y + this.trafficLight.height / 4 + (l * 150), 64, '#2c3e50');
+            this.lights.push(light);
+        }
+        
         switch (colRand)
         {
             case 1:
