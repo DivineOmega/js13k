@@ -40,8 +40,10 @@ function MinigameTrafficLights()
         }
         if(this.correctCol === this.currentCol && this.convergame.isControlPressed("space")) {
             minigameSwitcher.score++;
+            this.lights = [];
             this.convergame.changeScene(success);
         } else if(this.correctCol != this.currentCol && this.convergame.isControlPressed("space")) {
+            this.lights = [];
             this.convergame.changeScene(fail);
         }
 
