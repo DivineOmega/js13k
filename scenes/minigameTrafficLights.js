@@ -1,53 +1,48 @@
 function MinigameTrafficLights()
 {
     this.convergame = null;
-    this.controls = null;
+    this.controls = 'Press spacebar to go on the correct light';
     this.instruction = null;
     this.correctControl = "space";
     this.correctCol = null;
     this.col = null;
-    this.colShadow = null;
     this.timer = 0;
     this.gameTime = 3;
-    this.canPress = false;
-    this.canPressTimer = null;
     this.lights = [];
     this.trafficLight = null;
-    
+    this.currentCol = null;
     this.updateFunction = function(time)
     {
         this.timer += time;
-        /*if(this.timer > this.canPressTimer) {
-            this.canPress = true;
-        }*/
          
         if (this.timer>=3)
         {
             this.convergame.changeScene(timeout);
         }
 
-        if ( this.canPress === true && this.convergame.isControlPressed(this.correctControl))
-        {
-            minigameSwitcher.score++;
-            this.convergame.changeScene(success);
-        } 
-        else if (this.canPress === false && this.convergame.isControlPressed(this.correctControl))
-        {
-            this.convergame.changeScene(fail);
-        }
-        
         if(this.timer >= 0 && this.timer <= 1.25) {
             this.lights[0].updateCol('#e74c3c');
             this.lights[1].updateCol('#2c3e50');
             this.lights[2].updateCol('#2c3e50');
+            this.currentCol = 'red';
+
         } else if(this.timer >= 1 && this.timer <= 2) {
             this.lights[0].updateCol('#2c3e50');
             this.lights[1].updateCol('#f39c12');
             this.lights[2].updateCol('#2c3e50');
+            this.currentCol = 'amber';
+
         } else if(this.timer >= 2) {
             this.lights[0].updateCol('#2c3e50');
             this.lights[1].updateCol('#2c3e50');
             this.lights[2].updateCol('#2ecc71');
+            this.currentCol = 'green';
+        }
+        if(this.correctCol === this.currentCol && this.convergame.isControlPressed("space")) {
+            minigameSwitcher.score++;
+            this.convergame.changeScene(success);
+        } else if(this.correctCol != this.currentCol && this.convergame.isControlPressed("space")) {
+            this.convergame.changeScene(fail);
         }
 
     };
@@ -78,7 +73,6 @@ function MinigameTrafficLights()
         this.height = this.convergame.getCanvasHeight();
         this.textFont = "sans-serif";
         this.colWhite = "#ecf0f1";
-        this.canPressTimer = this.convergame.random(1.75,1.9);
         this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 3, this.width / 4, this.height / 2 + this.height / 4, '#34495e');
         
         var colRand = this.convergame.random(1, 3);
@@ -86,7 +80,7 @@ function MinigameTrafficLights()
             light = new TrafficLight((this.trafficLight.x + this.trafficLight.width / 3), this.trafficLight.y + this.trafficLight.height / 4 + (l * 150), 64, '#2c3e50');
             this.lights.push(light);
         }
-        
+
         switch (colRand)
         {
             case 1:
