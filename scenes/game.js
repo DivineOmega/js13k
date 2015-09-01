@@ -10,6 +10,7 @@ var canvas = document.getElementById("game"),
 	minigameLeftOrRight = new MinigameLeftOrRight(),
 	minigameButton = new MinigameButton(),
 	minigameDoNothing = new MinigameDoNothing(),
+	minigameMorality = new MinigameMorality(),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
