@@ -47,14 +47,14 @@ function MinigameMorality()
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#333333');
         
-        this.convergame.drawFilledRect(50, 50, width/2, height, '#009900', '#009900');
-        this.convergame.drawFilledRect(width/2, 50, width/2, height, '#990000', '#990000');
+        this.convergame.drawFilledRect(0, width*0.05, width*0.50, height, '#009900', '#009900');
+        this.convergame.drawFilledRect(width*0.50, width*0.05, width*0.50, height, '#990000', '#990000');
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width*0.50, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width*0.50, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
         
-        this.convergame.drawText(0+(width/5), 550, colWhite, 64, textFont, "left", this.leftChoice, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width-(width/5), 550, colWhite, 64, textFont, "right", this.rightChoice, true, 2, 2, "#2c3e50");
+        this.convergame.drawText((width*0.15), 550, colWhite, 40, textFont, "left", this.leftChoice, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width-(width*0.15), 550, colWhite, 40, textFont, "right", this.rightChoice, true, 2, 2, "#2c3e50");
         
     };
     
