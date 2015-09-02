@@ -164,6 +164,12 @@ function MinigameMorality()
                 this.choice1 = "In trouble";
                 this.choice2 = "In school";
                 break;
+                
+            case 15:
+                this.instruction = "What is a great treat for children?";
+                this.correctChoice = 1;
+                this.choice1 = "Ice cream";
+                this.choice2 = "Poop";
         }
         
         
