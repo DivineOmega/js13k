@@ -28,7 +28,7 @@ function MinigameSwitcher()
                 this.timeMultiplier = this.timeMultiplier - 0.1;
             }
             
-            console.log('Games played: '+this.gamesPlayedCount+', Time multiplier: '+this.timeMultiplier);
+            //console.log('Games played: '+this.gamesPlayedCount+', Time multiplier: '+this.timeMultiplier);
             
             this.convergame.changeScene(this.nextMinigame);
         }
