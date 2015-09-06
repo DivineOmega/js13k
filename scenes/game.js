@@ -12,6 +12,7 @@ var canvas = document.getElementById("game"),
 	minigameTrafficLights = new MinigameTrafficLights(),
 	minigameDoNothing = new MinigameDoNothing(),
 	minigameMorality = new MinigameMorality(),
+	minigameCol = new MinigameCol(),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
