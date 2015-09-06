@@ -7,6 +7,8 @@ function MinigameSwitcher()
     this.timeMultiplier = 1;
     this.gamesPlayedCount = 0;
     
+    this.gameTime = 4;
+    
     this.getReadyMessage = null;
     this.nextMinigame = null;
     
@@ -18,7 +20,7 @@ function MinigameSwitcher()
     {
         this.startMinigameTimer += time;
         
-        if (this.startMinigameTimer>=this.getGameTime(4))
+        if (this.startMinigameTimer>=this.gameTime)
         {
             this.startMinigameTimer = 0;
             this.gamesPlayedCount++;
@@ -51,6 +53,8 @@ function MinigameSwitcher()
     {
         this.convergame = convergame;
         this.startMinigameTimer = 0;
+        
+        this.gameTime = this.getGameTime(4);
         
         var random = this.convergame.random(1,11);
         
