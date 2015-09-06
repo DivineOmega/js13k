@@ -84,7 +84,7 @@ function MinigameMorality()
             
             case 3:
                 this.instruction = "How should you drive?";
-                this.correctChoice = 1;
+                this.correctChoice = 2;
                 this.choice1 = "Calmly";
                 this.choice2 = "Agressively";
                 break;
@@ -153,10 +153,10 @@ function MinigameMorality()
                 break;
                 
             case 13:
-                this.instruction = "If you're helping out IT, what should you do?";
-                this.correctChoice = 1;
-                this.choice1 = "Useless bug report";
-                this.choice2 = "Detailed analysis of the issue";
+                this.instruction = "How do you calm a crying child?";
+                this.correctChoice = 2;
+                this.choice1 = "Ice Cream";
+                this.choice2 = "Eyes Cream";
                 break;
                 
             case 14:
