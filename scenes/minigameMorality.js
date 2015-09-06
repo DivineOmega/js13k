@@ -155,7 +155,7 @@ function MinigameMorality()
             case 13:
                 this.instruction = "How do you calm a crying child?";
                 this.correctChoice = 2;
-                this.choice1 = "Ice Cream";
+                this.choice1 = "Ice Cream"; 
                 this.choice2 = "Eyes Cream";
                 break;
                 
