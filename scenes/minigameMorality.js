@@ -62,6 +62,7 @@ function MinigameMorality()
     {
         this.convergame = convergame;
         this.timer = 0;
+        this.gameTime = minigameSwitcher.getGameTime(5);
         
         var random = this.convergame.random(1,14);
             

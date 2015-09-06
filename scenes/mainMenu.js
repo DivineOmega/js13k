@@ -18,7 +18,11 @@ function MainMenu()
         if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 0)
         {
             minigameSwitcher.resetScore();
+            minigameSwitcher.resetTimeMultiplier();
+            minigameSwitcher.resetGamesPlayedCount();
+            
             this.convergame.changeScene(minigameSwitcher);
+            
         } else if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 1) {
             this.convergame.changeScene(optionsScene);
         }

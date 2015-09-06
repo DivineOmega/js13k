@@ -4,6 +4,8 @@ function MinigameSwitcher()
     this.convergame = null;
     
     this.score = 0;
+    this.timeMultiplier = 1;
+    this.gamesPlayedCount = 0;
     
     this.getReadyMessage = null;
     this.nextMinigame = null;
@@ -16,9 +18,17 @@ function MinigameSwitcher()
     {
         this.startMinigameTimer += time;
         
-        if (this.startMinigameTimer>=4)
+        if (this.startMinigameTimer>=this.getGameTime(4))
         {
             this.startMinigameTimer = 0;
+            this.gamesPlayedCount++;
+            
+            if (this.gamesPlayedCount%5 === 0 && this.gamesPlayedCount !== 0)
+            {
+                this.timeMultiplier = this.timeMultiplier - 0.1;
+            }
+            
+            console.log('Games played: '+this.gamesPlayedCount+', Time multiplier: '+this.timeMultiplier);
             
             this.convergame.changeScene(this.nextMinigame);
         }
@@ -105,5 +115,20 @@ function MinigameSwitcher()
     this.resetScore = function()
     {
         this.score = 0;
+    };
+    
+    this.resetTimeMultiplier = function()
+    {
+        this.timeMultiplier = 1;
+    };
+    
+    this.resetGamesPlayedCount = function()
+    {
+        this.gamesPlayedCount = -1;  
+    };
+    
+    this.getGameTime = function(standardGameTime)
+    {
+        return standardGameTime * this.timeMultiplier;
     };
 }

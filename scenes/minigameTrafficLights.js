@@ -15,24 +15,24 @@ function MinigameTrafficLights()
     {
         this.timer += time;
          
-        if (this.timer>=3)
+        if (this.timer>=this.gameTime)
         {
             this.convergame.changeScene(timeout);
         }
 
-        if(this.timer >= 0 && this.timer <= 1.25) {
+        if(this.timer >= 0 && this.timer <= this.gameTime*0.33) {
             this.lights[0].updateCol('#e74c3c');
             this.lights[1].updateCol('#2c3e50');
             this.lights[2].updateCol('#2c3e50');
             this.currentCol = 'red';
 
-        } else if(this.timer >= 1 && this.timer <= 2) {
+        } else if(this.timer >= this.gameTime*0.33 && this.timer <= this.gameTime*0.66) {
             this.lights[0].updateCol('#2c3e50');
             this.lights[1].updateCol('#f39c12');
             this.lights[2].updateCol('#2c3e50');
             this.currentCol = 'amber';
 
-        } else if(this.timer >= 2) {
+        } else if(this.timer >= this.gameTime*0.66) {
             this.lights[0].updateCol('#2c3e50');
             this.lights[1].updateCol('#2c3e50');
             this.lights[2].updateCol('#2ecc71');
@@ -71,6 +71,8 @@ function MinigameTrafficLights()
     {
         this.convergame = convergame;
         this.timer = 0;
+        this.gameTime = minigameSwitcher.getGameTime(3);
+        
         this.width = this.convergame.getCanvasWidth();
         this.height = this.convergame.getCanvasHeight();
         this.textFont = "sans-serif";

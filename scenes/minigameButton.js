@@ -19,7 +19,7 @@ function MinigameButton()
             
         }
          
-        if (this.timer>=3)
+        if (this.timer>=this.gameTime)
         {
             this.convergame.changeScene(timeout);
         }
@@ -55,7 +55,8 @@ function MinigameButton()
     {
         this.convergame = convergame;
         this.timer = 0;
-        this.canPressTimer = this.convergame.random(1.75,1.9);
+        this.gameTime = minigameSwitcher.getGameTime(3);
+        this.canPressTimer = this.convergame.random(this.gameTime*0.15,this.gameTime*0.75);
         var colRand = this.convergame.random(1, 2);
         switch (colRand)
         {

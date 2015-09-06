@@ -26,7 +26,7 @@ function MinigameLeftOrRight()
             this.convergame.changeScene(fail);
         }
         
-        if (this.timer>=3)
+        if (this.timer>=this.gameTime)
         {
             this.convergame.changeScene(timeout);
         }
@@ -51,6 +51,7 @@ function MinigameLeftOrRight()
     {
         this.convergame = convergame;
         this.timer = 0;
+        this.gameTime = minigameSwitcher.getGameTime(3);
         
         var random = this.convergame.random(1,4);
             

@@ -11,7 +11,7 @@ function Success()
     {
         this.timer += time;
         
-        if (this.timer>=3)
+        if (this.timer>=minigameSwitcher.getGameTime(3))
         {
             this.convergame.changeScene(minigameSwitcher);
         }
