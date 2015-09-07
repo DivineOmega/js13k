@@ -107,7 +107,7 @@ function Timeout()
         
         var instrument = Synth.createInstrument('organ');
         
-        setTimeout(function() { instrument.play('F', 4, 3) }, 0.00 * 1000);
+        setTimeout(function() { instrument.play('F', 4, 3); }, 0.00 * 1000);
         
     };
 }
