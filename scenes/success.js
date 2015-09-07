@@ -74,5 +74,11 @@ function Success()
                 this.message = "Points up!";
                 break;
         }
+        
+        var instrument = Synth.createInstrument('organ');
+        
+        setTimeout(function() { instrument.play('D', 5, 2) }, 0.00 * 1000);
+        setTimeout(function() { instrument.play('G', 5, 2) }, 0.25 * 1000);
+        
     };
 }

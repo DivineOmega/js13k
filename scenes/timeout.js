@@ -104,5 +104,10 @@ function Timeout()
                 this.message = "Think quick(er).";
                 break;
         }
+        
+        var instrument = Synth.createInstrument('organ');
+        
+        setTimeout(function() { instrument.play('F', 4, 3) }, 0.00 * 1000);
+        
     };
 }

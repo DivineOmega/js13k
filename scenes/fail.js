@@ -80,5 +80,13 @@ function Fail()
                 this.message = "Good, but not the one.";
                 break;
         }
+        
+        var instrument = Synth.createInstrument('organ');
+        
+        setTimeout(function() { instrument.play('G', 4, 2) }, 0.00 * 1000);
+        setTimeout(function() { instrument.play('D', 4, 2) }, 0.25 * 1000);
+        setTimeout(function() { instrument.play('G', 3, 2) }, 1.00 * 1000);
+        setTimeout(function() { instrument.play('D', 3, 2) }, 1.25 * 1000);
+        
     };
 }
