@@ -31,17 +31,15 @@ function MainMenu()
     this.renderFunction = function()
     {
         this.convergame.blankCanvas('#34495e');
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
             textStyle = "#ecf0f1",
             rectangleStyle = "#ecf0f1";
 
-        this.convergame.drawText(width / 2, 75, textStyle, 64, textFont, "center", "DRAWBACKS", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 75, textStyle, 64, textFont, "center", "DRAWBACKS", true, 2, 2, "#2c3e50");
         this.convergame.drawRect(50, 750, 500, 100, 500, 90, rectangleStyle);
         this.convergame.drawRect(50, 850, 500, 100, 500, 90, rectangleStyle);
         
-        this.convergame.drawText(width / 2, 150, textStyle, 32, textFont, "center", "Don't bother using this menu.", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, textStyle, 32, textFont, "center", "Don't bother using this menu.", true, 2, 2, "#2c3e50");
         
         var recentangleFillStyle = "#2c3e50";
         

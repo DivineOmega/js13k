@@ -17,14 +17,12 @@ function Fail()
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#CC3300');
-        this.convergame.drawText(width / 2, 150, colWhite, 128, textFont, "center", "Final score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, height / 2, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, height / 2 + 150, colWhite, 64, textFont, "center", "Don't press enter to return to the Main Menu...", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, colWhite, 128, textFont, "center", "Final score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 500, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 500 + 150, colWhite, 64, textFont, "center", "Don't press enter to return to the Main Menu...", true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)

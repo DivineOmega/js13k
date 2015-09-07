@@ -19,14 +19,12 @@ function Success()
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#32cd32');
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
