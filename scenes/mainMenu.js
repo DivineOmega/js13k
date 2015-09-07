@@ -21,6 +21,8 @@ function MainMenu()
             minigameSwitcher.resetTimeMultiplier();
             minigameSwitcher.resetGamesPlayedCount();
             
+            timeout.resetTimeouts();
+            
             this.convergame.changeScene(minigameSwitcher);
             
         } else if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 1) {
