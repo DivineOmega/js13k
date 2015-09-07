@@ -1,7 +1,7 @@
 var canvas = document.getElementById("game"), 
 	introScene = new IntroScene(), 
 	mainMenu = new MainMenu(),
-	optionsScene = new OptionsScene(),
+	aboutScene = new AboutScene(),
 	minigameSwitcher = new MinigameSwitcher(),
 	success = new Success(),
 	fail = new Fail(),

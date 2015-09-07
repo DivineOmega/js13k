@@ -24,7 +24,7 @@ function MainMenu()
             this.convergame.changeScene(minigameSwitcher);
             
         } else if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 1) {
-            this.convergame.changeScene(optionsScene);
+            this.convergame.changeScene(aboutScene);
         }
 
     };
