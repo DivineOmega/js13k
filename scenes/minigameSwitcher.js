@@ -112,6 +112,13 @@ function MinigameSwitcher()
         this.nextMinigame = this.gameBag[random];
         
         this.gameBag.splice(random, 1);
+        
+        var instrument = Synth.createInstrument('piano');
+        
+        setTimeout(function() { instrument.play('C', 5, 1); }, 0.00 * 1000);
+        setTimeout(function() { instrument.play('C', 5, 1); }, (this.gameTime*0.33) * 1000);
+        setTimeout(function() { instrument.play('C', 5, 1); }, (this.gameTime*0.66) * 1000);
+        setTimeout(function() { instrument.play('E', 5, 1); }, this.gameTime * 1000);
     };
     
     this.resetScore = function()
