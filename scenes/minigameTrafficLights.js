@@ -20,19 +20,19 @@ function MinigameTrafficLights()
             this.convergame.changeScene(timeout);
         }
 
-        if(this.timer >= 0 && this.timer <= this.gameTime*0.33) {
+        if(this.timer >= 0 && this.timer <= this.gameTime*0.50) {
             this.lights[0].updateCol('#e74c3c');
             this.lights[1].updateCol('#2c3e50');
             this.lights[2].updateCol('#2c3e50');
             this.currentCol = 'red';
 
-        } else if(this.timer >= this.gameTime*0.33 && this.timer <= this.gameTime*0.66) {
+        } else if(this.timer >= this.gameTime*0.50 && this.timer <= this.gameTime*0.75) {
             this.lights[0].updateCol('#2c3e50');
             this.lights[1].updateCol('#f39c12');
             this.lights[2].updateCol('#2c3e50');
             this.currentCol = 'amber';
 
-        } else if(this.timer >= this.gameTime*0.66) {
+        } else if(this.timer >= this.gameTime*0.75) {
             this.lights[0].updateCol('#2c3e50');
             this.lights[1].updateCol('#2c3e50');
             this.lights[2].updateCol('#2ecc71');

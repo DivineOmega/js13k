@@ -56,7 +56,7 @@ function MinigameButton()
         this.convergame = convergame;
         this.timer = 0;
         this.gameTime = minigameSwitcher.getGameTime(3);
-        this.canPressTimer = this.convergame.random(this.gameTime*0.15,this.gameTime*0.75);
+        this.canPressTimer = this.convergame.random(this.gameTime*0.05,this.gameTime*0.65);
         var colRand = this.convergame.random(1, 2);
         switch (colRand)
         {
