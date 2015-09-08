@@ -139,5 +139,5 @@ function Timeout()
     this.resetTimeouts = function()
     {
         this.timeouts = 4;
-    }
+    };
 }
