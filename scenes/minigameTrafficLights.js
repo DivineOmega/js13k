@@ -73,8 +73,8 @@ function MinigameTrafficLights()
         this.timer = 0;
         this.gameTime = minigameSwitcher.getGameTime(3);
         
-        this.width = this.convergame.getCanvasWidth();
-        this.height = this.convergame.getCanvasHeight();
+        this.width = 1920;
+        this.height = 1080;
         this.textFont = "sans-serif";
         this.colWhite = "#ecf0f1";
         this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 3, this.width / 4, this.height / 2 + this.height / 4, '#34495e');
