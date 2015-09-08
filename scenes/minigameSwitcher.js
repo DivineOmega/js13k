@@ -5,6 +5,8 @@ function MinigameSwitcher()
     
     this.score = 0;
     this.timeMultiplier = 1;
+    this.timeMultiplierDecay = 0.1;
+    
     this.gamesPlayedCount = 0;
     
     this.gameTime = 4;
@@ -27,7 +29,7 @@ function MinigameSwitcher()
             
             if (this.gamesPlayedCount%5 === 0 && this.gamesPlayedCount !== 0)
             {
-                this.timeMultiplier = this.timeMultiplier - 0.1;
+                this.timeMultiplier = this.timeMultiplier - this.timeMultiplierDecay;
             }
             
             //console.log('Games played: '+this.gamesPlayedCount+', Time multiplier: '+this.timeMultiplier);
