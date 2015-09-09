@@ -8,9 +8,10 @@ function MinigameCol()
     this.correctControl = null;
     
     this.correctChoice = null;
-    this.choice1 = null;
-    this.choice2 = null;
+    this.col1 = null;
+    this.col2 = null;
     
+
     this.leftChoice = null;
     this.rightChoice = null;
     
@@ -40,17 +41,17 @@ function MinigameCol()
     
     this.renderFunction = function()
     { 
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
+        var width = 1920,
+            height = 1080,
             textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#333333');
         
-        this.convergame.drawFilledRect(0, 0, width / 2, height, '#009900', '#009900');
-        this.convergame.drawFilledRect(width / 2, 0, width / 2, height, '#990000', '#990000');
+        this.convergame.drawFilledRect(0, 0, width / 2, height, this.leftChoice[0], this.leftChoice[0]);
+        this.convergame.drawFilledRect(width / 2, 0, width / 2, height, this.rightChoice[0], this.rightChoice[0]);
         
-        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "left", this.leftChoice, true, 2, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "right", this.rightChoice, true, 2, 2, "#2c3e50");
+        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "left", this.leftChoice[1].toLowerCase(), true, 2, 2, "#2c3e50");
+        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "right", this.rightChoice[1].toLowerCase(), true, 2, 2, "#2c3e50");
         
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
@@ -94,51 +95,40 @@ function MinigameCol()
         this.timer = 0;
         
         //Todo: Move this into own function
-        var colourID1, colourID2, correctCol, incorrectCol;
+        var colourID1, colourID2;
         colourID1 =  this.convergame.random(1,6);
         colourID2 =  this.convergame.random(1,6);
 
-        //Todo: These need renaming as Choice 1 and 2 and decide which one is the correct one later on
-        correctCol = this.getCol(colourID1);
-        incorrectCol = this.getCol(colourID2);
-        
-        while (correctCol === incorrectCol) {
-            colourID2 =  this.convergame.random(1,6);
-            incorrectCol = this.getCol(colourID2);
+        if (this.colourID1 === this.colourID2) {
+            if(colourID2 == 6) {
+                colourID2 -= 1;
+            } else {
+                colourID2 += 1;
+            }
         }
 
-        this.instruction = 'Select the ' + incorrectCol[1].toLowerCase() + ' colour.';
-        // Randomise the display of the choices
+        //Todo: These need renaming as Choice 1 and 2 and decide which one is the correct one later on
+        this.col1 = this.getCol(colourID1);
+        this.col2 = this.getCol(colourID2);
+        
 
+        // Randomise the display of the choices
         random = this.convergame.random(1,2);
         
         if (random===1)
         {
-            this.leftChoice = this.choice1;
-            this.rightChoice = this.choice2;
-            
-            if (this.correctChoice===1)
-            {
-                this.correctControl = "left";
-            }
-            else if (this.correctChoice===2)
-            {
-                this.correctControl = "right";
-            }
+            this.leftChoice = this.col1;
+            this.rightChoice = this.col2;
+            this.correctControl = "left";
         }
         else if (random===2)
         {
-            this.leftChoice = this.choice2;
-            this.rightChoice = this.choice1;
-            
-            if (this.correctChoice===1)
-            {
-                this.correctControl = "right";
-            }
-            else if (this.correctChoice===2)
-            {
-                this.correctControl = "left";
-            }
+            this.leftChoice = this.col2;
+            this.rightChoice = this.col1;
+            this.correctControl = "right";
+        
         }
+
+        this.instruction = 'Select the ' + this.col2[1].toLowerCase() + ' colour.';
     };
 }
