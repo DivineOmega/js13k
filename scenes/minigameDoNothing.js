@@ -40,8 +40,8 @@ function MinigameDoNothing()
 
         this.convergame.drawFilledRect(100, 275, 1600, 200, '#FFFFFF', 'rgba(255, 255, 255, 0.1)');
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
         
     };
     

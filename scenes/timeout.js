@@ -7,26 +7,49 @@ function Timeout()
     
     this.timer = 0;
     
+    this.timeouts = 4;
+    
     this.updateFunction = function(time)
     {
         this.timer += time;
         
         if (this.timer>=minigameSwitcher.getGameTime(3))
         {
-            this.convergame.changeScene(minigameSwitcher);
+            if (this.timeouts===0)
+            {
+                this.convergame.changeScene(fail);
+            }
+            else
+            {
+                this.convergame.changeScene(minigameSwitcher);
+            }
         }
     };
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#989898');
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        var timeoutsPhrase = "";
+        
+        if (this.timeouts===1)
+        {
+            timeoutsPhrase = "1 timeout remains!";
+        }
+        else if (this.timeouts===0)
+        {
+            timeoutsPhrase = "You're out of timeouts!";
+        }
+        else
+        {
+            timeoutsPhrase = this.timeouts + " timeouts remain!";
+        }
+
+        this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 550, colWhite, 42, textFont, "center", timeoutsPhrase, true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
@@ -37,6 +60,8 @@ function Timeout()
             minigameSwitcher.score--;
         }
         var random = this.convergame.random(1,16);
+        
+        this.timeouts--;
         
         switch (random)
         {
@@ -104,5 +129,15 @@ function Timeout()
                 this.message = "Think quick(er).";
                 break;
         }
+        
+        var instrument = Synth.createInstrument('organ');
+        
+        setTimeout(function() { instrument.play('F', 4, 3); }, 0.00 * 1000);
+        
+    };
+    
+    this.resetTimeouts = function()
+    {
+        this.timeouts = 4;
     };
 }
