@@ -77,7 +77,7 @@ function MinigameTrafficLights()
         this.height = 1080;
         this.textFont = "sans-serif";
         this.colWhite = "#ecf0f1";
-        this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 3, this.width / 4, this.height / 2 + this.height / 4, '#34495e');
+        this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 4, this.width / 4 - 100, this.height / 2 + 100 , '#34495e');
         
         var colRand = this.convergame.random(1, 3);
         for(var l = 0; l < 3; l++) {
