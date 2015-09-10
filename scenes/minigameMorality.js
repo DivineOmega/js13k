@@ -88,10 +88,10 @@ function MinigameMorality()
                 break;
                 
             case 4:
-                this.instruction = "You're a pilot with innocent passengers. Crash the plane?";
+                this.instruction = "You're a student, you must...";
                 this.correctChoice = 1;
-                this.choice1 = "Nose dive";
-                this.choice2 = "Steady flight";
+                this.choice1 = "Play games";
+                this.choice2 = "Study hard";
                 break;
                 
             case 5:
@@ -102,9 +102,9 @@ function MinigameMorality()
                 break;
                 
             case 6:
-                this.instruction = "As a doctor, you should:";
+                this.instruction = "As a doctor, you should...";
                 this.correctChoice = 1;
-                this.choice1 = "Release poison";
+                this.choice1 = "Prescribe poison";
                 this.choice2 = "Cure illness";
                 break;
                 
@@ -116,7 +116,7 @@ function MinigameMorality()
                 break;
                 
             case 8:
-                this.instruction = "Should you burn down a school?";
+                this.instruction = "Should you burn down a building?";
                 this.correctChoice = 1;
                 this.choice1 = "Great idea";
                 this.choice2 = "Probably not";
@@ -154,19 +154,19 @@ function MinigameMorality()
                 this.instruction = "How do you calm a crying child?";
                 this.correctChoice = 2;
                 this.choice1 = "Ice Cream"; 
-                this.choice2 = "Eyes Cream";
+                this.choice2 = "Eye Cream";
                 break;
                 
             case 14:
                 this.instruction = "Where do children belong?";
                 this.correctChoice = 1;
-                this.choice1 = "In trouble";
+                this.choice1 = "In space";
                 this.choice2 = "In school";
                 break;
                 
             case 15:
                 this.instruction = "What is a great treat for children?";
-                this.correctChoice = 1;
+                this.correctChoice = 2;
                 this.choice1 = "Ice cream";
                 this.choice2 = "Poop";
         }
