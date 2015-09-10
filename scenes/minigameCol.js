@@ -93,6 +93,7 @@ function MinigameCol()
     {
         this.convergame = convergame;
         this.timer = 0;
+        this.gameTime = minigameSwitcher.getGameTime(5);
         
         //Todo: Move this into own function
         var colourID1, colourID2;
