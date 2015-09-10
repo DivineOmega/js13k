@@ -99,7 +99,7 @@ function MinigameCol()
         colourID1 =  this.convergame.random(1,6);
         colourID2 =  this.convergame.random(1,6);
 
-        if (this.colourID1 === this.colourID2) {
+        if (colourID1 == colourID2) {
             if(colourID2 == 6) {
                 colourID2 -= 1;
             } else {
@@ -126,7 +126,6 @@ function MinigameCol()
             this.leftChoice = this.col2;
             this.rightChoice = this.col1;
             this.correctControl = "right";
-        
         }
 
         this.instruction = 'Select the ' + this.col2[1].toLowerCase() + ' colour.';
