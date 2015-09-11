@@ -13,6 +13,7 @@ var canvas = document.getElementById("game"),
 	minigameDoNothing = new MinigameDoNothing(),
 	minigameMorality = new MinigameMorality(),
 	minigameCol = new MinigameCol(),
+	minigameAnimals = new MinigameAnimals(),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
