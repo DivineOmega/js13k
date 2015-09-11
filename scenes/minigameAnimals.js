@@ -49,16 +49,11 @@ function MinigameAnimals()
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#3498db');
         
-        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "left", this.leftChoice, true, 2, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "right", this.rightChoice, true, 2, 2, "#2c3e50");
-
-        this.ani1Img.onload = function() {
-            this.convergame.drawImage(this.ani1Img, width / 4, height / 2);
-        };
-
-        this.ani2Img.onload = function() {
-            this.convergame.drawImage(this.ani2Img, (width / 2) + (width / 4), height / 2);
-        };
+        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "center", this.leftChoice, true, 2, 2, "#2c3e50");
+        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "center", this.rightChoice, true, 2, 2, "#2c3e50");
+       
+        this.convergame.drawImage(this.ani1Img, (width / 4) - 64, height / 2, 128, 128);
+        this.convergame.drawImage(this.ani2Img, (width / 2) + (width / 4) - 64, height / 2, 128, 128);
         
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
