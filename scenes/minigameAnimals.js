@@ -16,9 +16,11 @@ function MinigameAnimals()
 
     this.leftChoice = null;
     this.rightChoice = null;
+    this.leftChoiceImg = new Image();
+    this.rightChoiceImg = new Image();
     
     this.timer = 0;
-    this.gameTime = 5;
+    this.gameTime = 3;
     
     this.updateFunction = function(time)
     {
@@ -48,15 +50,17 @@ function MinigameAnimals()
             textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#3498db');
-        
-        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "center", this.leftChoice, true, 2, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "center", this.rightChoice, true, 2, 2, "#2c3e50");
-       
-        this.convergame.drawImage(this.ani1Img, (width / 4) - 64, height / 2, 128, 128);
-        this.convergame.drawImage(this.ani2Img, (width / 2) + (width / 4) - 64, height / 2, 128, 128);
-        
+
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        
+        this.convergame.drawText( width / 4 , (height / 2) + 256 , colWhite, 40, textFont, "center", this.leftChoice, true, 2, 2, "#2c3e50");
+        this.convergame.drawText((width / 2) + (width / 4), (height / 2) + 256 , colWhite, 40, textFont, "center", this.rightChoice, true, 2, 2, "#2c3e50");
+       
+        this.convergame.drawImage(this.leftChoiceImg, (width / 4) - 90, (height / 2), 128, 128);
+        this.convergame.drawImage(this.rightChoiceImg, (width / 2) + (width / 4) - 90, (height / 2), 128, 128);
+        
+        
     };
 
     this.getAni = function(id) {
@@ -93,7 +97,7 @@ function MinigameAnimals()
         animalID2 =  this.convergame.random(1,5);
 
         if (animalID1 == animalID2) {
-            if(animalID2 == 6) {
+            if(animalID2 == 5) {
                 animalID2 -= 1;
             } else {
                 animalID2 += 1;
@@ -104,7 +108,6 @@ function MinigameAnimals()
         this.ani1 = this.getAni(animalID1);
         this.ani2 = this.getAni(animalID2);
         
-
         // Randomise the display of the choices
         random = this.convergame.random(1,2);
         
@@ -112,12 +115,16 @@ function MinigameAnimals()
         {
             this.leftChoice = this.ani1;
             this.rightChoice = this.ani2;
+            this.leftChoiceImg = this.ani1Img;
+            this.rightChoiceImg = this.ani2Img;
             this.correctControl = "left";
         }
         else if (random===2)
         {
             this.leftChoice = this.ani2;
             this.rightChoice = this.ani1;
+            this.leftChoiceImg =  this.ani2Img;
+            this.rightChoiceImg =  this.ani1Img;
             this.correctControl = "right";
         }
         this.ani1Img.src = './assets/sprites/animals/'+ this.ani1 +'.svg';
