@@ -26,7 +26,7 @@ function MinigameUpOrDown()
             this.convergame.changeScene(fail);
         }
         
-        if (this.timer>=3)
+        if (this.timer>=this.gameTime)
         {
             this.convergame.changeScene(timeout);
         }
@@ -34,16 +34,14 @@ function MinigameUpOrDown()
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#669999');
 
-        this.convergame.drawFilledRect(100, 275, 1600, 200, '#FFFFFF', '#333333');
+        this.convergame.drawFilledRect(100, 275, 1600, 200, '#FFFFFF', 'rgba(255, 255, 255, 0.1)');
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 400, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
         
     };
     
@@ -51,6 +49,7 @@ function MinigameUpOrDown()
     {
         this.convergame = convergame;
         this.timer = 0;
+        this.gameTime = minigameSwitcher.getGameTime(3);
         
         var random = this.convergame.random(1,4);
             

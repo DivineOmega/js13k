@@ -1,7 +1,7 @@
 var canvas = document.getElementById("game"), 
 	introScene = new IntroScene(), 
 	mainMenu = new MainMenu(),
-	optionsScene = new OptionsScene(),
+	aboutScene = new AboutScene(),
 	minigameSwitcher = new MinigameSwitcher(),
 	success = new Success(),
 	fail = new Fail(),
@@ -11,6 +11,8 @@ var canvas = document.getElementById("game"),
 	minigameButton = new MinigameButton(),
 	minigameTrafficLights = new MinigameTrafficLights(),
 	minigameDoNothing = new MinigameDoNothing(),
+	minigameMorality = new MinigameMorality(),
+	minigameCol = new MinigameCol(),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
