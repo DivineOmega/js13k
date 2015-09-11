@@ -11,7 +11,7 @@ function Success()
     {
         this.timer += time;
         
-        if (this.timer>=3)
+        if (this.timer>=minigameSwitcher.getGameTime(3))
         {
             this.convergame.changeScene(minigameSwitcher);
         }
@@ -19,14 +19,12 @@ function Success()
     
     this.renderFunction = function()
     {
-        var width = 1920,
-            height = 1080,
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#32cd32');
 
-        this.convergame.drawText(width / 2, 150, colWhite, 64, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 400, colWhite, 48, textFont, "center", this.message, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, colWhite, 64, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, colWhite, 48, textFont, "center", this.message, true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
@@ -74,5 +72,11 @@ function Success()
                 this.message = "Points up!";
                 break;
         }
+        
+        var instrument = Synth.createInstrument('organ');
+        
+        setTimeout(function() { instrument.play('D', 5, 2); }, 0.00 * 1000);
+        setTimeout(function() { instrument.play('G', 5, 2); }, 0.25 * 1000);
+        
     };
 }

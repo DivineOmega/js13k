@@ -18,42 +18,52 @@ function MainMenu()
         if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 0)
         {
             minigameSwitcher.resetScore();
+            minigameSwitcher.resetTimeMultiplier();
+            minigameSwitcher.resetGamesPlayedCount();
+            
+            timeout.resetTimeouts();
+            
             this.convergame.changeScene(minigameSwitcher);
+            
         } else if (this.convergame.isControlPressed("enter") && this.currentMenuIndex === 1) {
-            this.convergame.changeScene(optionsScene);
+            this.convergame.changeScene(aboutScene);
         }
 
     };
     this.renderFunction = function()
     {
         this.convergame.blankCanvas('#34495e');
-        var width = 1920,
-            height = 1080,
-            textFont = "sans-serif",
+        var textFont = "sans-serif",
+            textSize = 96,
             textStyle = "#ecf0f1",
+            width = 1920,
+            height = 1080,
+            boxWidth = 500,
+            boxHeight = 100,
             rectangleStyle = "#ecf0f1";
 
-        this.convergame.drawText(width / 2, 75, textStyle, 64, textFont, "center", "Reversed Game for JS13K", true, 2, 2, "#2c3e50");
-        this.convergame.drawRect(50, 750, 500, 100, 500, 90, rectangleStyle);
-        this.convergame.drawRect(50, 850, 500, 100, 500, 90, rectangleStyle);
+        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, textFont, "center", "DRAWBACKS", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, (height / 4) + 150, textStyle, 32, textFont, "center", "Don't bother using this menu.", true, 2, 2, "#2c3e50");
+        this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2), boxWidth, boxHeight, 500, 90, rectangleStyle);
+        this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2) + (boxHeight + 16), boxWidth, boxHeight, 500, 90, rectangleStyle);
         
-        this.convergame.drawText(width / 2, 150, textStyle, 32, textFont, "center", "Don't bother using this menu.", true, 2, 2, "#2c3e50");
+        
         
         var recentangleFillStyle = "#2c3e50";
         
         switch(this.currentMenuIndex)
         {
             case 0:
-                this.convergame.drawFilledRect(50, 750, 500, 100, rectangleStyle, recentangleFillStyle); //We would save space by just changing the FillStyle here :) 
+                this.convergame.drawFilledRect((width / 2) - (boxWidth / 2), (height / 2), boxWidth, boxHeight, rectangleStyle, recentangleFillStyle); //We would save space by just changing the FillStyle here :) 
                 break;
                 
             case 1:
-                this.convergame.drawFilledRect(50, 850, 500, 100, rectangleStyle, recentangleFillStyle); //We would save space by just changing the FillStyle here :) 
+                this.convergame.drawFilledRect((width / 2) - (boxWidth / 2), (height / 2) + (boxHeight + 16), boxWidth, boxHeight, rectangleStyle, recentangleFillStyle); //We would save space by just changing the FillStyle here :) 
                 break;
         }
         
-        this.convergame.drawText(100, 810, textStyle, 42, textFont, "left" ,"Start");
-        this.convergame.drawText(100, 910, textStyle, 42, textFont, "left" ,"Options");
+        this.convergame.drawText((width / 2), (height / 2) + 60, textStyle, 42, textFont, "center" ,"Start");
+        this.convergame.drawText((width / 2), (height / 2) + (boxHeight + 16) + 60, textStyle, 42, textFont, "center" ,"About");
     };
     
     this.init = function(convergame)

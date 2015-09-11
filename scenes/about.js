@@ -1,5 +1,5 @@
 
-function OptionsScene()
+function AboutScene()
 {
     this.convergame = null;
     this.updateFunction = function(time)
@@ -14,7 +14,7 @@ function OptionsScene()
             textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#e74c3c');
-        this.convergame.drawText(width / 2, 75, colWhite, 64, textFont, "center", "Options", true, 2, 2, "#c0392b");
+        this.convergame.drawText(960, 75, colWhite, 64, textFont, "center", "About & Credits", true, 2, 2, "#c0392b");
     };
     
     this.init = function(convergame)
