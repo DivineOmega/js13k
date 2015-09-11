@@ -44,9 +44,9 @@ function MinigameSwitcher()
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#FFBF00');
 
-        this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", "Score: "+this.score, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(960, 500, colWhite, 32, textFont, "center", this.nextMinigame.controls, true, 2, 2, "#2c3e50");
-        this.convergame.drawText(960, 400, colWhite, 64, textFont, "center", this.getReadyMessage, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, colWhite, 64, textFont, "center", "Score: "+this.score, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 500, colWhite, 64, textFont, "center", this.nextMinigame.controls, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, colWhite, 48, textFont, "center", this.getReadyMessage, true, 2, 2, "#2c3e50");
     };
     
     this.init = function(convergame)

@@ -57,7 +57,6 @@ function MinigameTrafficLights()
         //Traffic Light Rectangle Forground
         this.trafficLight.draw();
 
-        //Traffic Light Circle Black
         for(l = 0; l < this.lights.length; l++) {
             this.lights[l].draw();
         }

@@ -28,6 +28,7 @@ function Timeout()
     
     this.renderFunction = function()
     {
+
         var textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#989898');
@@ -50,6 +51,7 @@ function Timeout()
         this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", "Score: "+minigameSwitcher.score, true, 2, 2, "#2c3e50");
         this.convergame.drawText(960, 400, colWhite, 64, textFont, "center", this.message, true, 2, 2, "#2c3e50");
         this.convergame.drawText(960, 550, colWhite, 42, textFont, "center", timeoutsPhrase, true, 2, 2, "#2c3e50");
+
     };
     
     this.init = function(convergame)
