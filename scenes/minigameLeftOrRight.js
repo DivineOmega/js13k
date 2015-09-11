@@ -34,8 +34,8 @@ function MinigameLeftOrRight()
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
+        var width = 1920,
+            height = 1080,
             textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#669999');

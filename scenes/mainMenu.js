@@ -27,8 +27,8 @@ function MainMenu()
     this.renderFunction = function()
     {
         this.convergame.blankCanvas('#34495e');
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
+        var width = 1920,
+            height = 1080,
             textFont = "sans-serif",
             textStyle = "#ecf0f1",
             rectangleStyle = "#ecf0f1";

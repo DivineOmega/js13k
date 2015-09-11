@@ -37,25 +37,21 @@ function MinigameTrafficLights()
     
     this.renderFunction = function()
     {
-        var width = this.convergame.getCanvasWidth(),
-            height = this.convergame.getCanvasHeight(),
+        var width = 1920,
+            height = 1080,
             textFont = "sans-serif",
             colWhite = "#ecf0f1";
         this.convergame.blankCanvas('#669999');
-        /*this.convergame.drawFilledCircle(width / 2, height / 2 + 110, 256, '#2c3e50', '#2c3e50');
-        this.convergame.drawFilledCircle(width / 2, height / 2 + 100, 256, this.colShadow, this.colShadow);
-        this.convergame.drawFilledCircle(width / 2, height / 2 + 100, 254, this.colShadow, this.col);
-        */
-
+        
         //Traffic Light
         //Traffic Light Rectangle Background
-        this.convergame.drawFilledRect((width / 2 + 200) * this.convergame.getScreenScale(), 200 * this.convergame.getScreenScale(), 400 * this.convergame.getScreenScale(), height - 100 * this.convergame.getScreenScale(), '#2c3e50', '#34495e');
+        this.convergame.drawFilledRect((width / 2 + 200) * this.convergame.getScreenScale(), 200 , 400 , height - 100 , '#2c3e50', '#34495e');
         //Traffic Light Rectangle Forground
 
         //Traffic Light Circle Black
-        this.convergame.drawFilledCircle((width / 2 + 375) * this.convergame.getScreenScale(), height / 2 - 128 * this.convergame.getScreenScale(), 96 * this.convergame.getScreenScale(), '#2c3e50', '#2c3e50');
-        this.convergame.drawFilledCircle((width / 2 + 375) * this.convergame.getScreenScale(), height / 2 + 64 * this.convergame.getScreenScale(), 96 * this.convergame.getScreenScale(), '#2c3e50', '#2c3e50');
-        this.convergame.drawFilledCircle((width / 2 + 375) * this.convergame.getScreenScale(), height / 2 + 256 * this.convergame.getScreenScale(), 96 * this.convergame.getScreenScale(), '#2c3e50', '#2c3e50');
+        this.convergame.drawFilledCircle((width / 2 + 375), height / 2 - 128 , 96 , '#2c3e50', '#2c3e50');
+        this.convergame.drawFilledCircle((width / 2 + 375), height / 2 + 64 , 96 , '#2c3e50', '#2c3e50');
+        this.convergame.drawFilledCircle((width / 2 + 375) , height / 2 + 256 , 96 , '#2c3e50', '#2c3e50');
         //Traffic Light Circle Colour
         this.convergame.drawFilledCircle(width / 2, height / 2 + 100, 254, this.col, this.col);
 
