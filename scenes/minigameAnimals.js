@@ -10,14 +10,10 @@ function MinigameAnimals()
     this.correctChoice = null;
     this.ani1 = null;
     this.ani2 = null;
-    
-    this.ani1Img = new Image();
     this.ani2Img = new Image();
 
     this.leftChoice = null;
     this.rightChoice = null;
-    this.leftChoiceImg = new Image();
-    this.rightChoiceImg = new Image();
     
     this.timer = 0;
     this.gameTime = 3;
@@ -57,8 +53,11 @@ function MinigameAnimals()
         this.convergame.drawText( width / 4 , (height / 2) + 256 , colWhite, 40, textFont, "center", this.leftChoice, true, 2, 2, "#2c3e50");
         this.convergame.drawText((width / 2) + (width / 4), (height / 2) + 256 , colWhite, 40, textFont, "center", this.rightChoice, true, 2, 2, "#2c3e50");
        
-        this.convergame.drawImage(this.leftChoiceImg, (width / 4) - 90, (height / 2), 128, 128);
-        this.convergame.drawImage(this.rightChoiceImg, (width / 2) + (width / 4) - 90, (height / 2), 128, 128);
+        var pathPrefix = './assets/sprites/animals/';
+        var pathSuffix = '.svg';
+       
+        this.convergame.drawImage(pathPrefix+this.leftChoice+pathSuffix, (width / 4) - 90, (height / 2), 128, 128);
+        this.convergame.drawImage(pathPrefix+this.rightChoice+pathSuffix, (width / 2) + (width / 4) - 90, (height / 2), 128, 128);
         
         
     };
@@ -115,20 +114,14 @@ function MinigameAnimals()
         {
             this.leftChoice = this.ani1;
             this.rightChoice = this.ani2;
-            this.leftChoiceImg = this.ani1Img;
-            this.rightChoiceImg = this.ani2Img;
             this.correctControl = "left";
         }
         else if (random===2)
         {
             this.leftChoice = this.ani2;
             this.rightChoice = this.ani1;
-            this.leftChoiceImg =  this.ani2Img;
-            this.rightChoiceImg =  this.ani1Img;
             this.correctControl = "right";
         }
-        this.ani1Img.src = './assets/sprites/animals/'+ this.ani1 +'.svg';
-        this.ani2Img.src = './assets/sprites/animals/'+ this.ani2 +'.svg';
 
         this.instruction = 'Select the ' + this.ani2 + '.';
     };
