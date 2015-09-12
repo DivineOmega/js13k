@@ -61,7 +61,7 @@ function MinigameSpelling()
         
         this.instruction = "Select the correct spelling.";
         
-        var random = this.convergame.random(1,17);
+        var random = this.convergame.random(1,15);
         
         switch (random)
         {
@@ -153,18 +153,6 @@ function MinigameSpelling()
                 this.correctChoice = 2;
                 this.choice1 = "vacuum";
                 this.choice2 = "vacume";
-                break;
-                
-            case 16:
-                this.correctChoice = 2;
-                this.choice1 = "weather";
-                this.choice2 = "waether";
-                break;
-                
-            case 17:
-                this.correctChoice = 2;
-                this.choice1 = "weird";
-                this.choice2 = "wierd";
                 break;
         }
         
