@@ -44,17 +44,15 @@ function MinigameAnimals()
         var width = 1920,
             height = 1080,
             font = "sans-serif",
-            white = "#ecf0f1";
+            white = "#ecf0f1",
+            pathPrefix = './assets/sprites/animals/';
         this.convergame.blankCanvas('#3498db');
 
-        this.convergame.drawText(width / 2, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), false, 0, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 250, white, 64, font, "center", this.instruction, false, 0, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 250, white, 64, font, "center", this.instruction, true, 0, 2, "#2c3e50");
 
-        var pathPrefix = './assets/sprites/animals/';
-        var pathSuffix = '.svg';
-       
-        this.convergame.drawImage(pathPrefix+this.leftChoice+pathSuffix, (width / 4) - 90, (height / 2), 128, 128);
-        this.convergame.drawImage(pathPrefix+this.rightChoice+pathSuffix, (width / 2) + (width / 4) - 90, (height / 2), 128, 128);
+        this.convergame.drawImage(pathPrefix+this.leftChoice+'.svg', (width / 4) - 90, (height / 2), 256, 256);
+        this.convergame.drawImage(pathPrefix+this.rightChoice+'.svg', (width / 2) + (width / 4) - 90, (height / 2), 256, 256);
         
         
     };
