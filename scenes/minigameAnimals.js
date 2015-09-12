@@ -47,8 +47,8 @@ function MinigameAnimals()
             white = "#ecf0f1";
         this.convergame.blankCanvas('#3498db');
 
-        this.convergame.drawText(width / 2, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 250, white, 64, font, "center", this.instruction, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), false, 0, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 250, white, 64, font, "center", this.instruction, false, 0, 2, "#2c3e50");
 
         var pathPrefix = './assets/sprites/animals/';
         var pathSuffix = '.svg';

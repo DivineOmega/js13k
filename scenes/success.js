@@ -23,8 +23,8 @@ function Success()
             white = "#ecf0f1";
         this.convergame.blankCanvas('#32cd32');
 
-        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+minigameSwitcher.score, true, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 400, white, 64, font, "center", this.message, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+minigameSwitcher.score, false, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, white, 64, font, "center", this.message, false, 0, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
