@@ -20,9 +20,9 @@ function Fail()
         var font = "sans-serif",
             white = "#ecf0f1";
         this.convergame.blankCanvas('#CC3300');
-        this.convergame.drawText(960, 150, white, 128, font, "center", "Final score: "+minigameSwitcher.score, false, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 500, white, 64, font, "center", this.message, false, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 500 + 150, white, 64, font, "center", "Don't press enter to return to the Main Menu...", false, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, white, 128, font, "center", "Final score: "+minigameSwitcher.score, true, 0, 2, "#c0392b");
+        this.convergame.drawText(960, 500, white, 64, font, "center", this.message, true, 0, 2, "#c0392b");
+        this.convergame.drawText(960, 500 + 150, white, 64, font, "center", "Don't press enter to return to the Main Menu...", true, 0, 2, "#c0392b");
     };
     
     this.init = function(convergame)

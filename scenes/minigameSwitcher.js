@@ -40,11 +40,11 @@ function MinigameSwitcher()
     {
         var font = "sans-serif",
             white = "#ecf0f1";
-        this.convergame.blankCanvas('#e67e22');
+        this.convergame.blankCanvas('#f39c12');
 
-        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+this.score, false, 0, 2, "#d35400");
-        this.convergame.drawText(960, 400, white, 48, font, "center", this.getReadyMessage, false, 0, 2, "#d35400");
-        this.convergame.drawText(960, 500, white, 64, font, "center", this.nextMinigame.controls, false, 0, 2, "#d35400");
+        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+this.score, true, 0, 2, "#e67e22");
+        this.convergame.drawText(960, 400, white, 48, font, "center", this.getReadyMessage, true, 0, 2, "#e67e22");
+        this.convergame.drawText(960, 500, white, 64, font, "center", this.nextMinigame.controls, true, 0, 2, "#e67e22");
     };
     
     this.init = function(convergame)

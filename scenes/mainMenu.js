@@ -43,9 +43,9 @@ function MainMenu()
             rectangleStyle = "#ecf0f1",
             recentangleFillStyle = "#2ecc71";
 
-        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, font, "center", "DRAWBACKS" );
-        this.convergame.drawText(width / 2, (height / 4) + 100, textStyle, 48, font, "center", "A Reversed Game for JS13K" );
-        this.convergame.drawText(width / 2, (height / 4) + 200, textStyle, 32, font, "center", "Don't press 'Start' to continue..." );
+        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, font, "center", "DRAWBACKS", true, 0, 2, "#16a085");
+        this.convergame.drawText(width / 2, (height / 4) + 100, textStyle, 48, font, "center", "A Reversed Game for JS13K", true, 0, 2, "#16a085");
+        this.convergame.drawText(width / 2, (height / 4) + 200, textStyle, 32, font, "center", "Don't press 'Start' to continue...", true, 0, 2, "#16a085");
         this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2), boxWidth, boxHeight, 500, 90, rectangleStyle);
         this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2) + (boxHeight + 16), boxWidth, boxHeight, 500, 90, rectangleStyle);
         
@@ -61,8 +61,8 @@ function MainMenu()
                 break;
         }
         
-        this.convergame.drawText((width / 2), (height / 2) + 60, textStyle, 42, font, "center" ,"Start");
-        this.convergame.drawText((width / 2), (height / 2) + (boxHeight + 16) + 60, textStyle, 42, font, "center" ,"About");
+        this.convergame.drawText((width / 2), (height / 2) + 60, textStyle, 42, font, "center" ,"Start", false, 0, 2, "#16a085");
+        this.convergame.drawText((width / 2), (height / 2) + (boxHeight + 16) + 60, textStyle, 42, font, "center" ,"About", false, 0, 2, "#16a085");
     };
     
     this.init = function(convergame)
