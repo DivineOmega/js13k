@@ -42,8 +42,8 @@ function MainMenu()
             boxHeight = 100,
             rectangleStyle = "#ecf0f1";
 
-        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, textFont, "center", "DRAWBACKS", true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, (height / 4) + 150, textStyle, 32, textFont, "center", "Don't bother using this menu.", true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, textFont, "center", "DRAWBACKS", true, 0, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, (height / 4) + 150, textStyle, 32, textFont, "center", "Don't bother using this menu.", true, 0, 2, "#2c3e50");
         this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2), boxWidth, boxHeight, 500, 90, rectangleStyle);
         this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2) + (boxHeight + 16), boxWidth, boxHeight, 500, 90, rectangleStyle);
         

@@ -48,7 +48,7 @@ function MinigameButton()
         this.convergame.drawFilledCircle((width / 2) - (baseRadius / 4), height / 2 + 100, baseRadius, this.colShadow, this.colShadow);
         this.convergame.drawFilledCircle((width / 2) - (baseRadius / 4), height / 2 + 100, baseRadius - 2, this.colShadow, this.col);
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
         this.convergame.drawText(width / 2, height / 2 + 110, colWhite, 64, textFont, "center", this.instruction, true, 0, -2, "#2c3e50");
     };
     

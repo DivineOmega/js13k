@@ -50,11 +50,11 @@ function MinigameCol()
         this.convergame.drawFilledRect(0, 0, width / 2, height, this.leftChoice[0], this.leftChoice[0]);
         this.convergame.drawFilledRect(width / 2, 0, width / 2, height, this.rightChoice[0], this.rightChoice[0]);
         
-        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "left", this.leftChoice[1].toLowerCase(), true, 2, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "right", this.rightChoice[1].toLowerCase(), true, 2, 2, "#2c3e50");
+        this.convergame.drawText( width / 4 , height / 2, colWhite, 40, textFont, "left", this.leftChoice[1].toLowerCase(), true, 0, 2, "#2c3e50");
+        this.convergame.drawText((width / 2) + (width / 4), height / 2, colWhite, 40, textFont, "right", this.rightChoice[1].toLowerCase(), true, 0, 2, "#2c3e50");
         
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
-        this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
+        this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 0, 2, "#2c3e50");
     };
 
     this.getCol = function(id) {
