@@ -9,7 +9,7 @@ minifyHTML = require('gulp-minify-html'),
 rename = require('gulp-rename'),
 runSequence = require('run-sequence');
 
-var zip_files = ['js13k.js', 'index.html'], //Files to be added to the zip folder use "<directory goes here>/*" for all files inside the directory
+var zip_files = ['js13k.js', 'index.html', 'assets/sprites/animals/*'], //Files to be added to the zip folder use "<directory goes here>/*" for all files inside the directory
 	js_files = ['lib/**/*.js', 'convergame/convergame.js', 'scenes/*', 'objects/*'], //All your JS files to be combined and minified
 	img_files = ['assets/*.png','assets/*.jpg','src/**/*.gif','assets/*.jpeg'];
 
