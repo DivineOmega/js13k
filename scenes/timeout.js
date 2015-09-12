@@ -47,9 +47,9 @@ function Timeout()
             timeoutsPhrase = this.timeouts + " timeouts remain!";
         }
 
-        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+minigameSwitcher.score, true, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 400, white, 48, font, "center", this.message, true, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 550, white, 48, font, "center", timeoutsPhrase, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+minigameSwitcher.score, false, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, white, 48, font, "center", this.message, false, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 550, white, 48, font, "center", timeoutsPhrase, false, 0, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
