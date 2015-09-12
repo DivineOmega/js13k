@@ -20,12 +20,10 @@ function AboutScene()
             white = "#ecf0f1";
         this.convergame.blankCanvas('#e74c3c');
         this.convergame.drawText(960, 75, white, 64, font, "center", "About Drawbacks", true, 0, 2, "#c0392b");
-        this.convergame.drawText(100, 150, white, 32, font, "left", "Drawbacks is a fast paced mini-game challenge, where all instructions are reversed. Sound confusing? That's the point.", true, 0, 2, "#c0392b");
-        this.convergame.drawText(100, 200, white, 32, font, "left", "Don't do what the game tells you. It's quite deceiving... ", true, 0, 2, "#c0392b");
+        this.convergame.drawText(100, 150, white, 32, font, "left", "Drawbacks is a mini-game challenge, where all instructions are reversed. Sound confusing? That's the point.", true, 0, 2, "#c0392b");
+        this.convergame.drawText(100, 200, white, 32, font, "left", "It's quite deceiving... ", true, 0, 2, "#c0392b");
         
         this.convergame.drawText(100, 300, white, 32, font, "left", "The game requires some quick thinking, a non-conforming attitude and a desire to not do what you're told.", true, 0, 2, "#c0392b");
-        this.convergame.drawText(100, 350, white, 32, font, "left", "If you feel that matches your style, you can play the jsk13games version of Drawback right here.", true, 0, 2, "#c0392b");
-        
         
         this.convergame.drawText(width / 2, height / 2, white, 64, font, "center", "Credits", true, 0, 2, "#c0392b");
         this.convergame.drawText(width / 2, (height / 2) + 64, white, 32, font, "center", "Jordan Hall", true, 0, 2, "#c0392b");
