@@ -50,8 +50,8 @@ function MinigameCol()
         this.convergame.drawFilledRect(0, 0, width / 2, height, this.leftChoice[0], this.leftChoice[0]);
         this.convergame.drawFilledRect(width / 2, 0, width / 2, height, this.rightChoice[0], this.rightChoice[0]);
         
-        this.convergame.drawText( width / 4 , height / 2, white, 40, font, "left", this.leftChoice[1].toLowerCase(), true, 0, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) + (width / 4), height / 2, white, 40, font, "right", this.rightChoice[1].toLowerCase(), true, 0, 2, "#2c3e50");
+        this.convergame.drawText( width / 4 , height / 2, white, 40, font, "left", this.leftChoice[1], true, 0, 2, "#2c3e50");
+        this.convergame.drawText((width / 2) + (width / 4), height / 2, white, 40, font, "right", this.rightChoice[1], true, 0, 2, "#2c3e50");
         
         this.convergame.drawText(width / 2, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 250, white, 64, font, "center", this.instruction, true, 0, 2, "#2c3e50");
