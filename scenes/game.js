@@ -14,6 +14,7 @@ var canvas = document.getElementById("game"),
 	minigameMorality = new MinigameMorality(),
 	minigameCol = new MinigameCol(),
 	minigameAnimals = new MinigameAnimals(),
+	minigameSpelling = new MinigameSpelling(),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
