@@ -63,8 +63,8 @@ function MinigameTrafficLights()
         }
 
         //Text
-        this.convergame.drawText(this.width / 2, 150, this.colWhite, 32, this.textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
-        this.convergame.drawText(this.width / 2, 400, this.colWhite, 64, this.textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
+        this.convergame.drawText(this.width / 2, 150, this.colWhite, 32, this.textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
+        this.convergame.drawText(this.width / 2, 400, this.colWhite, 64, this.textFont, "center", this.instruction, true, 0, 2, "#2c3e50");
     };
     
     this.init = function(convergame)
