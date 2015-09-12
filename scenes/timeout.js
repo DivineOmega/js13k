@@ -28,8 +28,8 @@ function Timeout()
     
     this.renderFunction = function()
     {
-        var textFont = "sans-serif",
-            colWhite = "#ecf0f1";
+        var font = "sans-serif",
+            white = "#ecf0f1";
         this.convergame.blankCanvas('#989898');
 
         var timeoutsPhrase = "";
@@ -47,9 +47,9 @@ function Timeout()
             timeoutsPhrase = this.timeouts + " timeouts remain!";
         }
 
-        this.convergame.drawText(960, 150, colWhite, 64, textFont, "center", "Score: "+minigameSwitcher.score, true, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 400, colWhite, 48, textFont, "center", this.message, true, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 550, colWhite, 48, textFont, "center", timeoutsPhrase, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, white, 64, font, "center", "Score: "+minigameSwitcher.score, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 400, white, 48, font, "center", this.message, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 550, white, 48, font, "center", timeoutsPhrase, true, 0, 2, "#2c3e50");
     };
     
     this.init = function(convergame)

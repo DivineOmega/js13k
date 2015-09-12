@@ -41,15 +41,15 @@ function MinigameSpelling()
     
     this.renderFunction = function()
     { 
-        var textFont = "sans-serif",
-            colWhite = "#ecf0f1";
+        var font = "sans-serif",
+            white = "#ecf0f1";
         this.convergame.blankCanvas('#808080');
         
-        this.convergame.drawText(960, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
-        this.convergame.drawText(960, 250, colWhite, 64, textFont, "center", this.instruction, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
+        this.convergame.drawText(960, 250, white, 64, font, "center", this.instruction, true, 0, 2, "#2c3e50");
         
-        this.convergame.drawText((1920*0.15), 550, colWhite, 40, textFont, "left", this.leftChoice, true, 0, 2, "#2c3e50");
-        this.convergame.drawText(1920-(1920*0.15), 550, colWhite, 40, textFont, "right", this.rightChoice, true, 0, 2, "#2c3e50");
+        this.convergame.drawText((1920*0.15), 550, white, 40, font, "left", this.leftChoice, true, 0, 2, "#2c3e50");
+        this.convergame.drawText(1920-(1920*0.15), 550, white, 40, font, "right", this.rightChoice, true, 0, 2, "#2c3e50");
         
     };
     

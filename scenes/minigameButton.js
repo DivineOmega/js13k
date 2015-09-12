@@ -38,8 +38,8 @@ function MinigameButton()
     {
         var width = 1920,
             height = 1080,
-            textFont = "sans-serif",
-            colWhite = "#ecf0f1",
+            font = "sans-serif",
+            white = "#ecf0f1",
             baseRadius = 256;
         this.convergame.blankCanvas('#669999');
 
@@ -47,8 +47,8 @@ function MinigameButton()
         this.convergame.drawFilledCircle((width / 2) - (baseRadius / 4), height / 2 + 100, baseRadius, this.colShadow, this.colShadow);
         this.convergame.drawFilledCircle((width / 2) - (baseRadius / 4), height / 2 + 100, baseRadius - 2, this.colShadow, this.col);
 
-        this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) - (this.convergame.getTextWidth(this.instructions) / 2), height / 2 + 110, colWhite, 64, textFont, "center", this.instruction, true, 0, -2, "#2c3e50");
+        this.convergame.drawText(width / 2, 150, white, 32, font, "center", (this.gameTime-this.timer).toFixed(2), true, 0, 2, "#2c3e50");
+        this.convergame.drawText((width / 2) - (this.convergame.getTextWidth(this.instructions) / 2), height / 2 + 110, white, 64, font, "center", this.instruction, true, 0, -2, "#2c3e50");
     };
     
     this.init = function(convergame)

@@ -33,7 +33,7 @@ function MainMenu()
     this.renderFunction = function()
     {
         this.convergame.blankCanvas('#27ae60');
-        var textFont = "sans-serif",
+        var font = "sans-serif",
             textSize = 96,
             textStyle = "#ecf0f1",
             width = 1920,
@@ -43,9 +43,9 @@ function MainMenu()
             rectangleStyle = "#ecf0f1",
             recentangleFillStyle = "#2ecc71";
 
-        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, textFont, "center", "DRAWBACKS" );
-        this.convergame.drawText(width / 2, (height / 4) + 100, textStyle, 48, textFont, "center", "A Reversed Game for JS13K" );
-        this.convergame.drawText(width / 2, (height / 4) + 200, textStyle, 32, textFont, "center", "Don't press 'Start' to continue..." );
+        this.convergame.drawText(width / 2, height / 4, textStyle, textSize, font, "center", "DRAWBACKS" );
+        this.convergame.drawText(width / 2, (height / 4) + 100, textStyle, 48, font, "center", "A Reversed Game for JS13K" );
+        this.convergame.drawText(width / 2, (height / 4) + 200, textStyle, 32, font, "center", "Don't press 'Start' to continue..." );
         this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2), boxWidth, boxHeight, 500, 90, rectangleStyle);
         this.convergame.drawRect((width / 2) - (boxWidth / 2), (height / 2) + (boxHeight + 16), boxWidth, boxHeight, 500, 90, rectangleStyle);
         
@@ -61,8 +61,8 @@ function MainMenu()
                 break;
         }
         
-        this.convergame.drawText((width / 2), (height / 2) + 60, textStyle, 42, textFont, "center" ,"Start");
-        this.convergame.drawText((width / 2), (height / 2) + (boxHeight + 16) + 60, textStyle, 42, textFont, "center" ,"About");
+        this.convergame.drawText((width / 2), (height / 2) + 60, textStyle, 42, font, "center" ,"Start");
+        this.convergame.drawText((width / 2), (height / 2) + (boxHeight + 16) + 60, textStyle, 42, font, "center" ,"About");
     };
     
     this.init = function(convergame)
