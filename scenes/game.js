@@ -1,5 +1,4 @@
 var canvas = document.getElementById("game"), 
-	introScene = new IntroScene(), 
 	mainMenu = new MainMenu(),
 	aboutScene = new AboutScene(),
 	minigameSwitcher = new MinigameSwitcher(),
@@ -18,5 +17,5 @@ var canvas = document.getElementById("game"),
 	convergame = new Convergame(canvas);
 	
 convergame.init();
-convergame.changeScene(introScene);
+convergame.changeScene(mainMenu);
 convergame.startMainGameLoop();
