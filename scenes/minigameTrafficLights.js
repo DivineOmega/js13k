@@ -81,7 +81,7 @@ function MinigameTrafficLights()
         
         var colRand = this.convergame.random(1, 3);
         for(var l = 0; l < 3; l++) {
-            light = new TrafficLight((this.trafficLight.x + this.trafficLight.width / 3), this.trafficLight.y + this.trafficLight.height / 4 + (l * 150), 64, '#2c3e50');
+            light = new TrafficLight((this.trafficLight.x + this.trafficLight.width / 2), this.trafficLight.y + this.trafficLight.height / 4 + (l * 150), 64, '#2c3e50');
             this.lights.push(light);
         }
 
