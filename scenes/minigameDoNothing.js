@@ -51,7 +51,7 @@ function MinigameDoNothing()
         this.timer = 0;
         this.gameTime = minigameSwitcher.getGameTime(3);
         
-        var random = this.convergame.random(1,7);
+        var random = this.convergame.random(1,5);
             
         switch (random)
         {
@@ -64,22 +64,14 @@ function MinigameDoNothing()
                 break;
                 
             case 3:
-                this.instruction = "Don't not press a key!";
-                break;
-                
-            case 4:
                 this.instruction = "Press any key to continue.";
                 break;
                 
-            case 5:
+            case 4:
                 this.instruction = "To continue, press any key.";
                 break;
                 
-            case 6:
-                this.instruction = "To increase your score, press any key.";
-                break;
-                
-            case 7:
+            case 5:
                 this.instruction = "Free points - hit any key!";
                 break;
         }
