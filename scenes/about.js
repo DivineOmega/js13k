@@ -4,7 +4,12 @@ function AboutScene()
     this.convergame = null;
     this.updateFunction = function(time)
     {
-        
+        if (this.convergame.isControlPressed("up") || this.convergame.isControlPressed("down") || 
+            this.convergame.isControlPressed("left") || this.convergame.isControlPressed("right") ||
+            this.convergame.isControlPressed("enter") || this.convergame.isControlPressed(null))
+        {
+            this.convergame.changeScene(mainMenu);
+        }
     };
     
     this.renderFunction = function()
