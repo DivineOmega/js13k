@@ -49,10 +49,7 @@ function MinigameAnimals()
 
         this.convergame.drawText(width / 2, 150, colWhite, 32, textFont, "center", (this.gameTime-this.timer).toFixed(2), true, 2, 2, "#2c3e50");
         this.convergame.drawText(width / 2, 250, colWhite, 64, textFont, "center", this.instruction, true, 2, 2, "#2c3e50");
-        
-        this.convergame.drawText( width / 4 , (height / 2) + 256 , colWhite, 40, textFont, "center", this.leftChoice, true, 2, 2, "#2c3e50");
-        this.convergame.drawText((width / 2) + (width / 4), (height / 2) + 256 , colWhite, 40, textFont, "center", this.rightChoice, true, 2, 2, "#2c3e50");
-       
+
         var pathPrefix = './assets/sprites/animals/';
         var pathSuffix = '.svg';
        
