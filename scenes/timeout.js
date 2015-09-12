@@ -30,7 +30,7 @@ function Timeout()
     {
         var font = "sans-serif",
             white = "#ecf0f1";
-        this.convergame.blankCanvas('#989898');
+        this.convergame.blankCanvas('#95a5a6');
 
         var timeoutsPhrase = "";
         
