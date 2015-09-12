@@ -105,7 +105,7 @@ function MinigameSwitcher()
                 break;
         }
         
-        var availableMinigames = [ minigameCol, minigameUpOrDown, minigameButton, minigameLeftOrRight, minigameDoNothing, minigameTrafficLights , minigameMorality, minigameAnimals];
+        var availableMinigames = [ minigameSpelling, minigameCol, minigameUpOrDown, minigameButton, minigameLeftOrRight, minigameDoNothing, minigameTrafficLights , minigameMorality, minigameAnimals];
 
         if (this.gameBag.length===0) this.gameBag = availableMinigames;
         
