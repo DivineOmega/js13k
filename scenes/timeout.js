@@ -59,7 +59,7 @@ function Timeout()
         if(minigameSwitcher.score > 0) {
             minigameSwitcher.score--;
         }
-        var random = this.convergame.random(1,16);
+        var random = this.convergame.random(1,12);
         
         this.timeouts--;
         
@@ -86,46 +86,30 @@ function Timeout()
                 break;
                 
             case 6:
-                this.message = "Are you still there?";
-                break;
-                
-            case 7:
-                this.message = "Hello?";
-                break;
-                
-            case 8:
-                this.message = "Player.exe is not responding.";
-                break;
-                
-            case 9:
                 this.message = "You took a bit too long.";
                 break;
                 
-            case 10:
+            case 7:
                 this.message = "You were a bit slow.";
                 break;
                 
-            case 11:
+            case 8:
                 this.message = "React faster next time!";
                 break;
                 
-            case 12:
+            case 9:
                 this.message = "You need to be faster!";
                 break;
                 
-            case 13:
-                this.message = "Time ran out.";
-                break;
-                
-            case 14:
+            case 10:
                 this.message = "Good try, but too slow.";
                 break;
                 
-            case 15:
+            case 11:
                 this.message = "Not quite fast enough.";
                 break;
                 
-            case 16:
+            case 12:
                 this.message = "Think quick(er).";
                 break;
         }
