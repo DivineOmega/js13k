@@ -32,8 +32,6 @@ function MinigameSwitcher()
                 this.timeMultiplier = this.timeMultiplier - this.timeMultiplierDecay;
             }
             
-            //console.log('Games played: '+this.gamesPlayedCount+', Time multiplier: '+this.timeMultiplier);
-            
             this.convergame.changeScene(this.nextMinigame);
         }
     };
