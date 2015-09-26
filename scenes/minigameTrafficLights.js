@@ -40,10 +40,8 @@ function MinigameTrafficLights()
         }
         if(this.correctCol === this.currentCol && this.convergame.isControlPressed("space")) {
             minigameSwitcher.score++;
-            this.lights = [];
             this.convergame.changeScene(success);
         } else if(this.correctCol != this.currentCol && this.convergame.isControlPressed("space")) {
-            this.lights = [];
             this.convergame.changeScene(fail);
         }
 
@@ -78,6 +76,8 @@ function MinigameTrafficLights()
         this.font = "sans-serif";
         this.white = "#ecf0f1";
         this.trafficLight = new TrafficLightBackground(this.width / 2 + this.width / 4, this.height / 4, this.width / 4 - 100, this.height / 2 + 100 , '#34495e');
+        
+        this.lights = [];
         
         var colRand = this.convergame.random(1, 3);
         for(var l = 0; l < 3; l++) {
